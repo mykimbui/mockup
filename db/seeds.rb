@@ -7,12 +7,13 @@
 
 
 Answer.destroy_all
-Challenge.destroy_all
-Member.destroy_all
-Team.destroy_all
 TeamChallenge.destroy_all
+Member.destroy_all
 User.destroy_all
+Team.destroy_all
 City.destroy_all
+Challenge.destroy_all
+
 
 user1 = User.create!(email: "manon@lol.me", password: "FGHJKL", first_name: "Manoune", last_name: "Cool")
 user2 = User.create!(email: "scourbey@gmail.com", password: "Waterloo1410", first_name: "sophie", last_name: "Courbey")
