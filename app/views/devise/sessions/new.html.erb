@@ -1,0 +1,29 @@
+ <div class="row">
+    <div class="col-xs-12 col-sm-6">
+
+      <div class="lilcontent text-center", style="padding: 15px 0 10px 0px;">
+
+
+<h2>LOG IN</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), defaults: { input_html: { class: 'input-container' } })  do |f| %>
+        <%= f.error_notification %>
+  <div class="form-inputs login-input">
+    <%= f.input :email, required: false, autofocus: true, label: 'Email', autofocus: true, wrapper: :p_wrapper %>
+    <%= f.input :password, required: false, label: 'Password', wrapper: :p_wrapper %>
+<!--     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+ -->  </div>
+        <div class="lilspace">
+
+  <div class="form-actions">
+    <%= f.button :submit, "Let's Go !", class: "btn btn-default btn-blue", style: "padding: 0px 10px; margin-top: 34px;
+margin-bottom: -10px;" %>
+  </div>
+<% end %>
+</div>
+<div style="margin: 0 -15px;">
+<%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
+</div>

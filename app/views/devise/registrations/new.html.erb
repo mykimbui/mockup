@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 text-center">
+
+      <div class="lilcontent", style="padding: 15px 0 10px 0px;">
+        <h2>CREATE AN ACCOUNT</h2>
+
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), defaults: { input_html: { class: 'input-container' } }) do |f| %>
+        <%= f.error_notification %>
+
+
+        <div class="form-inputs login-input">
+          <%= f.input :first_name, required: true, label: 'First name', wrapper: :p_wrapper %>
+          <%= f.input :last_name, required: true, label: 'Last name', wrapper: :p_wrapper %>
+          <%= f.input :email, required: true, label: 'Email', autofocus: true, wrapper: :p_wrapper %>
+          <%= f.input :password, required: true, label: 'Password', hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), wrapper: :p_wrapper %>
+          <%= f.input :password_confirmation, label: 'Confirmation',required: true, wrapper: :p_wrapper %>
+        </div>
+
+        <div class="lilspace">
+          <div class="form-actions">
+          <%= f.button :submit, "Sign up", class: "btn btn-default btn-blue", style: "padding: 0px 10px; margin-top: 34px;
+margin-bottom: -10px;" %>
+          </div>
+          <% end %>
+        </div>
+        <div style="margin: 0 -15px;">
+        <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 text-center">
+      <div class="container text-center">
+        <div class="profilecard-top">
+          <div class="lilspace text-center">
+            <% if @user.facebook_picture_url.nil? %>
+              <% unless @user.profile_picture.nil?  %>
+                <% if @user.profile_picture.present? %>
+                  <%= cl_image_tag @user.profile_picture, class: "avatar-user", crop: :fill %>
+                <% else %>
+                  <%= cl_image_tag("default_fkhyps.png", class: "avatar-user") %>
+                <% end %>
+              <% end %>
+            <%else %>
+              <%= image_tag @user.facebook_picture_url, class: "avatar-user", crop: :fill %>
+            <% end %>
+            <h2><%= @user.first_name %> <%= @user.last_name %> <%= link_to "", edit_user_path(@user),class: "fa fa-pencil edit-button", style: "color: #516DAC;", method: :get %></h2>
+            <strong class="point-display"><%= @user.user_score %><sup>PT</sup></strong>
+          </div>
+        </div>
+      </div>
+    <h1 class="text-left title-yo" style="color: #516DAC;"><b>MY TEAMS</b></h1>
+    <div class="profilecard-bottom text-right">
+      <p><%= link_to "CREATE A NEW TEAM", new_team_path, style: "text-decoration: none; color: white;" %></p>
+      <% @user.members.each do |member| %>
+        <%= render "card", member: member %>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
+
+

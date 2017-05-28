@@ -1,0 +1,80 @@
+.profilecard-top {
+  height: 50%;
+  // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: #516DAC;
+  position: relative;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  // border-color: #3A5CBE;
+  // border-style: solid 0.1px;
+}
+
+.profilecard-bottom {
+  height: auto;
+  // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: black;
+  position: relative;
+  background-color: #3C3D72;
+  // border-bottom-left-radius: 3px;
+  // border-bottom-right-radius: 3px;
+  // margin-bottom: 5px;
+  padding: 20px 50px;
+  // border-color: #3A5CBE;
+  // border-style: solid 0.1px;
+  margin: 0px -15px;
+  // bottom: -85px;
+  min-height: 24vh;
+}
+
+.user-score{
+  position: absolute;
+  top: 163px;
+  right: 0;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.user-score h3 {
+  font-size: 8px;
+}
+
+
+.lilspace {
+  padding: 15px 0 15px 0px;
+}
+
+.lilspace p {
+  margin-top: -6px;
+  font-size: 13px;
+}
+
+.profilecard-top h2 {
+  font-size: 15px;
+}
+
+.profilecard-bottom h2 {
+  font-size: 20px;
+  line-height: 12px;
+  margin-top: 0px;
+  margin-left: -2px;
+}
+
+.profilecard-bottom p {
+  font-size: 12px;
+  line-height: 12px;
+  margin-left: -2px;
+}
+
+.title-yo {
+  font-size: 15px;
+  color: white;
+}
+
+.title-userteam {
+  font-size: 15px;
+  color: #516DAC;
+  position: relative;
+  top: 90px;
+}
