@@ -1,131 +1,148 @@
-.btn-medium {
+.btn-main {
   color: white;
-  border: 2px solid #516DAC;
-  padding: 10px 15px;
-  border-radius: 5px;
-  background-color: #516DAC;
+  padding: 10px 148px;
+  border-radius: 30px;
+  background-color: #5274E8;
   font-weight: bold;
-}
-
-.btn-medium:hover,
-.btn-medium:focus {
-  opacity: 1;
-  text-decoration: none;
-}
-
-.btn-blue {
-  color: #516DAC;
-  border: 2px solid #516DAC;
-  padding: 3px 14px;
-  border-radius: 3px;
-  margin-top: 15px;
-  line-height: 225%;
-  background-color: transparent;
-}
-
-.btn-blue-log {
-  color: #3D3E6F;
-  padding: 3px 14px;
-  margin-top: 15px;
-  line-height: 225%;
-}
-
-.btn-blue:hover,
-.btn-blue:focus {
-  opacity: 1;
-  text-decoration: none;
-}
-
-.btn-white {
-  color: white;
-  border: 2px solid white;
-  padding: 3px 14px;
-  // border-radius: 50px;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-.btn-white:hover,
-.btn-white:focus {
-  text-decoration: none;
-  color: #999999;
-}
-
-.btn-blanc {
-  color: #FDF5E9;
-  border: 2px solid #FDF5E9;
-  padding: 7px 34px;
-  border-radius: 3px;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-.btn-blanc:hover,
-.btn-blanc:focus {
-  text-decoration: none;
-  color: white;
-}
-
-.edit-button {
-    text-decoration: none;
-
+  letter-spacing: 1px;
   a {
+    text-decoration: none;
     &:hover {
       text-decoration: none;
     }
   }
 }
 
-.btn-clear {
-  border-style: none;
-  background-color: none;
-}
 
 
-.big-btn {
-  height: 100px;
-  background-color: #696992;
-  padding: -60px;
-}
+// .btn-medium {
+//   color: white;
+//   border: 2px solid #516DAC;
+//   padding: 10px 15px;
+//   border-radius: 5px;
+//   background-color: #516DAC;
+//   font-weight: bold;
+// }
 
-.btn-team {
-  color: blue;
-  height: 100px;
-  text-align: center;
-  padding: 30px 0px;
-  width: 100%;
-}
+// .btn-medium:hover,
+// .btn-medium:focus {
+//   opacity: 1;
+//   text-decoration: none;
+// }
 
-.btn-team-left {
-  border-left: 2px solid #D3D3D3;
-  color: blue;
-  height: 100px;
-  text-align: center;
-  padding: 30px;
-  width: 100%;
-}
+// .btn-blue {
+//   color: #516DAC;
+//   border: 2px solid #516DAC;
+//   padding: 3px 14px;
+//   border-radius: 3px;
+//   margin-top: 15px;
+//   line-height: 225%;
+//   background-color: transparent;
+// }
 
-.btn-create-t {
-  background-color: #696992;
-  color: white;
-  border: none;
-  padding-top: 40px;
-  font-size: 20px;
-}
+// .btn-blue-log {
+//   color: #3D3E6F;
+//   padding: 3px 14px;
+//   margin-top: 15px;
+//   line-height: 225%;
+// }
 
-.btn-add-member {
-  height: 60px;
-  width: 60px;
-  opacity: 0.2;
-}
+// .btn-blue:hover,
+// .btn-blue:focus {
+//   opacity: 1;
+//   text-decoration: none;
+// }
 
-.btn-bottom {
-  height: 120px;
-  background-color: #555B8E;
-  color: white;
-  padding-top: 50px;
-  text-decoration: none;
-  a {
-    color: white;
-  }
-}
+// .btn-white {
+//   color: white;
+//   border: 2px solid white;
+//   padding: 3px 14px;
+//   // border-radius: 50px;
+//   margin-top: 15px;
+//   font-weight: bold;
+// }
+
+// .btn-white:hover,
+// .btn-white:focus {
+//   text-decoration: none;
+//   color: #999999;
+// }
+
+// .btn-blanc {
+//   color: #FDF5E9;
+//   border: 2px solid #FDF5E9;
+//   padding: 7px 34px;
+//   border-radius: 3px;
+//   margin-top: 15px;
+//   font-weight: bold;
+// }
+
+// .btn-blanc:hover,
+// .btn-blanc:focus {
+//   text-decoration: none;
+//   color: white;
+// }
+
+// .edit-button {
+//     text-decoration: none;
+
+//   a {
+//     &:hover {
+//       text-decoration: none;
+//     }
+//   }
+// }
+
+// .btn-clear {
+//   border-style: none;
+//   background-color: none;
+// }
+
+
+// .big-btn {
+//   height: 100px;
+//   background-color: #696992;
+//   padding: -60px;
+// }
+
+// .btn-team {
+//   color: blue;
+//   height: 100px;
+//   text-align: center;
+//   padding: 30px 0px;
+//   width: 100%;
+// }
+
+// .btn-team-left {
+//   border-left: 2px solid #D3D3D3;
+//   color: blue;
+//   height: 100px;
+//   text-align: center;
+//   padding: 30px;
+//   width: 100%;
+// }
+
+// .btn-create-t {
+//   background-color: #696992;
+//   color: white;
+//   border: none;
+//   padding-top: 40px;
+//   font-size: 20px;
+// }
+
+// .btn-add-member {
+//   height: 60px;
+//   width: 60px;
+//   opacity: 0.2;
+// }
+
+// .btn-bottom {
+//   height: 120px;
+//   background-color: #555B8E;
+//   color: white;
+//   padding-top: 50px;
+//   text-decoration: none;
+//   a {
+//     color: white;
+//   }
+// }

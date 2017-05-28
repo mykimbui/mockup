@@ -11,7 +11,6 @@ class Team < ApplicationRecord
 
   after_create :assign_challenges
 
-  validates :title, presence: true
   validates :end_date, presence: true
   validates :start_date, presence: true
 
