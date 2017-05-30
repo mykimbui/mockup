@@ -18,6 +18,23 @@ class TeamsController < ApplicationController
     end
   end
     @total_score = total_score
+
+    # @users = @team.users
+    @team_challenges = @team.team_challenges
+
+    #@user = current_user
+
+   # @hash = Gmaps4rails.build_markers(@list_challenges) do |challenge, marker|
+   #    marker.lat challenge.latitude
+   #    marker.lng challenge.longitude
+   #    #marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+   #    end
+
+    #order all the selected challenge by answer.status
+    @team_challenges_not_completed = @team_challenges.joins(:answer).where(answers: {status:'not_completed'})
+    @team_challenges_pending = @team_challenges.joins(:answer).where(answers: {status:'pending'})
+    @team_challenges_completed = @team_challenges.joins(:answer).where(answers: {status:'completed'})
+    @team_challenges_not_answered = @team_challenges - (@team_challenges_not_completed + @team_challenges_pending + @team_challenges_completed)
   end
 
   def new
