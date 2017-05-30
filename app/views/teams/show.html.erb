@@ -23,29 +23,36 @@
    </div>
  </div>
 
+ <div class="row">
+   <div class="col-xs-12">
+   <%= render "challenges/listchallenges" %>
+
+   </div>
+ </div>
+
+ <div class="row text-center">
+  <div class="col-xs-4">
+    <% if @team.in_trip? %>
+    <p><b>CHALLENGES</b><%#= link_to "", team_challenges_path(@team), method: :get, class: "btn-main" %></p>
+    <% end %>
+  </div>
+  <div class="col-xs-4">
+    <p><b>MAP</b><%#= link_to "", team_team_answers_path(@team), method: :get, class: "btn-main" %></p>
+  </div>
+  <div class="col-xs-4">
+    <p><b>MEMORIES</b><%#= link_to "", team_team_answers_path(@team), method: :get, class: "btn-main" %></p>
+  </div>
+
+</div>
+
+
 
 <%#= link_to "", edit_team_path(@team), class: "fa fa-pencil edit-button", style: "top: 28px;
 position: relative;
 right: -7px; color: grey; width: 10px", method: :get %>
 
-<% if @team.start_date.to_date > Date.today %>
-<p><%= countdown = (@team.start_date.to_date - Date.today).to_i %> days</p>
-<% elsif @team.in_trip? %>
-<p>You still have <%= -(Date.today - @team.end_date.to_date).to_i+1 %> days</p>
-<% else %>
-<p> The trip is finished. </p>
-<% end %>
 <%#= @team.city.name %> <%#= link_to "", city_path(@team.city), class: "fa fa-info-circle edit-button", style: "color: grey;", method: :get %>
 <%#= link_to "", city_members_path(@team.city), class: "fa fa-thermometer-full  edit-button", style: "color: grey;", method: :get %>
 
-<% if @team.in_trip? %>
-<p><b>CHALLENGES</b><%#= link_to "", team_challenges_path(@team), method: :get, class: "btn-main" %></p>
-<% end %>
-
-<p><b>MEMORIES</b><%#= link_to "", team_team_answers_path(@team), method: :get, class: "btn-main" %></p>
-
-<div class="row">
-  div.
-</div>
 
 </div>

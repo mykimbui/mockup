@@ -1,0 +1,7 @@
+<% if @team.start_date.to_date > Date.today %>
+<p><%= countdown = (@team.start_date.to_date - Date.today).to_i %> days</p>
+<% elsif @team.in_trip? %>
+<p>You still have <%= -(Date.today - @team.end_date.to_date).to_i+1 %> days</p>
+<% else %>
+<p> The trip is finished. </p>
+<% end %>

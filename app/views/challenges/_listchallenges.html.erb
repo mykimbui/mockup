@@ -1,17 +1,16 @@
-
-
-  <%= link_to '', team_path(@team), class: "fa fa-times fa-lg cross-challenge", style: "color: #484846;" %>
-
+<%#= link_to '', team_path(@team), class: "fa fa-times fa-lg cross-challenge", style: "color: #484846;" %>
+<% if @team_challenges_not_answered.present? %>
   <p class="text-left" style="margin-top: 10px; margin-left: 20px;"><b style='font-size: 12px'>YOUR CHALLENGES</b></p>
   <% @team_challenges_not_answered.each do |team_challenge| %>
     <%= render "card", team_challenge: team_challenge %>
   <% end %>
-  <% @team_challenges_not_completed.each do |team_challenge| %>
+  <% @team.team_challenges_not_completed.each do |team_challenge| %>
     <%= render "card", team_challenge: team_challenge %>
   <% end %>
-  <% @team_challenges_pending.each do |team_challenge| %>
+  <% @team.team_challenges_pending.each do |team_challenge| %>
     <%= render "card", team_challenge: team_challenge %>
   <% end %>
-  <% @team_challenges_completed.each do |team_challenge| %>
+  <% @team.team_challenges_completed.each do |team_challenge| %>
     <%= render "card", team_challenge: team_challenge %>
   <% end %>
+<% end %>

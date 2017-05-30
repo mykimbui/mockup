@@ -1,0 +1,14 @@
+<div class="row text-center bottommenu">
+  <div class="col-xs-4">
+    <% if @team.in_trip? %>
+    CHALLENGES<%#= link_to "", team_challenges_path(@team), method: :get, class: "btn-main" %>
+    <% end %>
+  </div>
+  <div class="col-xs-4">
+    MAP
+    <div class="col-xs-4">
+     MEMORIES<%#= link_to "", team_team_answers_path(@team), method: :get, class: "btn-main" %>
+   </div>
+
+ </div>
+

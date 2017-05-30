@@ -1,19 +1,13 @@
 class ChallengesController < ApplicationController
   def index
     @challenges = policy_scope(Challenge)
-
     @team = Team.find(params[:team_id])
     authorize @team
     # @users = @team.users
-
     @team_challenges = @team.team_challenges
-
     @user = current_user
-
     @challenges = Challenge.where.not(latitude: nil, longitude: nil)
-
     list_challenges = []
-
     @challenges.each do |list|
       list_challenges << [list.latitude, list.longitude, params[:team_id], list.id]
     end
@@ -27,8 +21,6 @@ class ChallengesController < ApplicationController
    #    end
 
     #order all the selected challenge by answer.status
-
-
     @team_challenges_not_completed = @team_challenges.joins(:answer).where(answers: {status:'not_completed'})
     @team_challenges_pending = @team_challenges.joins(:answer).where(answers: {status:'pending'})
     @team_challenges_completed = @team_challenges.joins(:answer).where(answers: {status:'completed'})
@@ -37,7 +29,6 @@ class ChallengesController < ApplicationController
 
   def show
     @navbardark = true
-
     @challenge = Challenge.find(params[:id])
     @team = Team.find(params[:team_id])
 
@@ -61,7 +52,6 @@ class ChallengesController < ApplicationController
   def update
     @challenge = Challenge.find(params[:id])
     @team = Team.find(params[:team_id])
-
     authorize @challenge
     @challenge.update(challenge_params)
     redirect_to team_challenge_path(@team, @challenge)
