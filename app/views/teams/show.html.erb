@@ -40,18 +40,30 @@
      </div>
    </div>
  </div>
- <div class="tab-content hidden" id="map">
-
+ <div class="tab-content hidden" id="mappy">
    <div class="row">
-       <%= render "challenges/map" %>
+   <div class="col-xs-12">
+<%= render "challenges/map" %>
+     </div>
    </div>
  </div>
 
-   <div class="tab-content hidden" id="memories">
-   </div>
+ <div class="tab-content hidden" id="memories">
+ <div class="row text-center">
+      <h1>YOUR MEMORIES</h1>
+      <% @team_answers.each do |team_answer| %>
+      <% unless  team_answer.picture.file.nil? %>
+      <div class="img">
+          <%= cl_image_tag team_answer.picture, height: 300, width: 300, crop: :fill%>
+      </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
 
 
- <div class="row text-center bottommenu">
+
+<div class="row text-center bottommenu">
   <div class="col-xs-4">
     <a class="tab active" data-target="#challenges"><ul class="list-unstyled">
       <li><i class="fa fa-gamepad icon-menu" aria-hidden="true"></i> </li>
@@ -61,7 +73,7 @@
       </ul></a>
     </div>
     <div class="col-xs-4">
-      <a class="tab" data-target="#map"><ul class="list-unstyled">
+      <a class="tab" data-target="#mappy"><ul class="list-unstyled">
         <li><i class="fa fa-map" style="font-size: 15px; line-height: 20px;" aria-hidden="true"></i></li>
         <li>MAP</li>
       </ul></a>

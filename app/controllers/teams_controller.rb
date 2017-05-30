@@ -9,18 +9,20 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
     authorize @team
 
-      total_score = 0
+    total_score = 0
     @team.team_challenges.each do |team_challenge|
       if !team_challenge.answer.nil?
-          if team_challenge.answer.status == Answer::COMPLETED
+        if team_challenge.answer.status == Answer::COMPLETED
           total_score += team_challenge.challenge.score
+        end
       end
     end
-  end
     @total_score = total_score
 
     # @users = @team.users
     @team_challenges = @team.team_challenges
+    @team_answers = @team.answers
+
 
     #@user = current_user
 
