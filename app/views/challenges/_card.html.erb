@@ -1,20 +1,11 @@
 <div class="row">
   <div class="col-xs-11">
-    <% if team_challenge.id.odd? %>
-    <div class="card-index">
-    <% else %>
-    <div class="card-index bg-grey-light">
-    <% end %>
       <div class="card-category">
-        <div class="challenge-score">
-          <h3><strong><%= team_challenge.challenge.score %></h3> <span><sup>PT</sup></span></strong>
-        </div>
       </div>
       <div class="team-score" style="color: black;">
-        <%#= team_challenge.challenge.input_type %>
       </div>
       <div class="card-description">
-        <h2><b><%= team_challenge.challenge.title %></b></h2>
+        <h2><%= team_challenge.challenge.title %></h2>
       </div>
       <%= link_to "", team_challenge_path(@team.id, team_challenge.challenge.id), class: "card-link" %>
 

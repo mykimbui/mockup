@@ -1,4 +1,4 @@
-<%= link_to '', team_challenges_path(@team, @challenge), class: "fa fa-times fa-lg"%>
+<%= link_to '', team_challenges_path(@team, @challenge), class: "fa fa-arrow-circle-o-left"%>
 <div class="content">
   <div class="text-center">
     <%= image_tag(@challenge.picture, :class => "picture-challenge") %>
@@ -20,8 +20,8 @@
   <div class="tab-content" id="challenge">
     <h1>Question</h1>
     <p><%= @challenge.description %></p>
-    <a class="tab active" data-target="#hint"><p>Want a hint ?</p></a>
-    <div class="tab-content hidden" id="hint">
+    <a id="hint"><p>Want a hint ?</p></a>
+    <div class="hint">
      <p><%= @challenge.hint %></p>
    </div>
    <div class="row input-things">
@@ -65,10 +65,22 @@
 </div>
 
 <div class="tab-content hidden" id="info">
-<%= render "info" %>
-
+  <%= render "info" %>
 </div>
 
+
+<div class="tab-content hidden" id="mapppy">
+
+  <div class="row">
+    <ul class='list-inline'>
+      <li><i class="fa fa-compass" aria-hidden="true"></i></li>
+      <li><p><%=@challenge.address%></p></li>
+    </ul>
+  </div>
+  <%= render "mapshow" %>
+
+
+</div>
 
 
 

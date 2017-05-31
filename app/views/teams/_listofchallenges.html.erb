@@ -1,4 +1,4 @@
-<div class="tab-content" id="ongoing">
+<div class="ongoing">
   <% @team_challenges_not_answered.each do |team_challenge| %>
     <%= render "cardchallenges", team_challenge: team_challenge %>
   <% end %>
@@ -10,8 +10,7 @@
   <% end %>
 
   </div>
-   <div class="tab-content hidden" id="completed">
-
+   <div class="completed">
   <% @team_challenges_completed.each do |team_challenge| %>
     <%= render "cardchallenges", team_challenge: team_challenge %>
   <% end %>

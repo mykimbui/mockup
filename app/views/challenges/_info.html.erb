@@ -1,16 +1,31 @@
-
+<div class="row">
+  <div class="col-xs-6">
+    <h1>Opening hours</h1>
+  </div>
+  <div class="col-xs-6">
+    <%= @challenge.openinghours %>
+  </div>
+</div>
 
 <div class="row">
-  <h3>COST</h3>
-  <div class="inside text-center bigger">
+  <div class="col-xs-6">
+    <h1>Location</h1>
+  </div>
+  <div class="col-xs-6">
+<!--     <div class="inside p-inline yo" style="display: flex;">
+ -->      <span id="total-distance"></span> away
+<!--     </div>
+ -->  </div>
+</div>
 
-    <div class="p-inline">
+<div class="row">
+  <div class="col-xs-6">
+    <h1>Cost</h1>
+  </div>
+  <div class="col-xs-6">
+     <div class="p-inline">
       <% if @challenge.cost == 0 %>
-      <div class="p-inline">
-        <p class="text-grey">€</p>
-        <p class="text-grey">€</p>
-        <p class="text-grey">€</p>
-      </div>
+      <p>FREE</p>
       <% elsif @challenge.cost == 1 %>
       <div class="p-inline">
         <p class="text-yellow">€</p>
@@ -30,11 +45,15 @@
         <p class="text-yellow">€</p>
       </div>
       <% end %>
-    </div>
+      </div>
   </div>
 </div>
+
 <div class="row">
-  <h3>WIFI</h3>
+  <div class="col-xs-6">
+  <h1>Wifi available</h1>
+  </div>
+    <div class="col-xs-6">
   <div class="inside text-center bigger">
     <%= link_to "#js-wifi", "data-toggle" => "modal" do %>
     <p class="typo_white">   <i class="fa fa-wifi fa-lg typo_white"" aria-hidden="true"></i></p>
@@ -67,26 +86,6 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="row">
-  <h3>ADDRESS</h3>
-  <div class="inside yo">
-    <p><%=@challenge.address%></p>
-  </div>
-</div>
-
-<div class="row">
-  <h3>LOCATION</h3>
-  <div class="inside p-inline yo" style="display: flex;">
-    <div class="bottoms-up">
-      <span id="total-distance">
-        <i class="fa fa-map-marker" aria-hidden="true" style="margin-right: 5px;"></i>
-      </span>
-
     </div>
   </div>
 </div>
