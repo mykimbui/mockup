@@ -1,10 +1,11 @@
 .btn-main {
   color: white;
-  padding: 10px 148px;
+  padding: 10px 120px;
   border-radius: 30px;
   background-color: #5274E8;
   font-weight: bold;
   letter-spacing: 1px;
+  border-color: #5274E8;
   a {
     text-decoration: none;
     &:hover {
@@ -13,7 +14,9 @@
   }
 }
 
-
+.btn-default {
+  border-color: none !important;
+}
 
 // .btn-medium {
 //   color: white;
