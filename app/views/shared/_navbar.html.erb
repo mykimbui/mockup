@@ -45,6 +45,9 @@
     <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "navbar-item navbar-link btn-border" %>
     <% end %>
 
+
+
+
     <!-- Mobile friendly -->
 
     <% if user_signed_in? %>
@@ -59,8 +62,33 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closelilNav()"></a>
         <%# end %>
         <ul class="overlay-content">
-          <div class="row">
-            <div class="col-xs-4">
+
+          <li class="little-title">MY TRIPS</li>
+          <ul class="cities yes">
+            <% current_user.teams.each do |t| %>
+            <li> <ul class="list-inline"><li><%= link_to t.city.name, team_path(t), method: :get if t.in_trip? %></li>
+            <li class="little-dates"><%= t.start_date.strftime("%d")%> <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              <%= t.end_date.strftime("%d-%m") %></li></ul>
+            </li>
+            <% end %>
+          </ul>
+          <li class="cities"><%= link_to "New trip", root_path %></li>
+          <li><hr align="left" width="10%"></li>
+          <%#= link_to "Edit my profile", edit_user_path(current_user)%>
+          <%#= link_to destroy_user_session_path, method: :delete do %>
+          <%#= t(".sign_out", default: "Log out") %>
+          <%# end %>
+          <li>About</li>
+          <li>Contact us</li>
+<!--           <li><ul class="list-inline">
+            <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+            <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
+            <li><i class="fa fa-youtube" aria-hidden="true"></i></li>
+            <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+          </ul></li> -->
+
+          <div class="row bigbigspace">
+            <div class="col-xs-2">
               <% if current_user.facebook_picture_url.nil? %>
               <% unless current_user.profile_picture.nil?  %>
               <% if current_user.profile_picture.present? %>
@@ -72,62 +100,36 @@
               <%else %>
               <%= image_tag current_user.facebook_picture_url, class: "avatar-nav", crop: :fill %>
               <% end %></div>
-              <div class="col-xs-8">
-                <ul class="list-inline">
-                  <li><p><%= current_user.first_name.capitalize %></p></li>
-                  <li><p><%= current_user.last_name.capitalize %></p></li>
+              <div class="col-xs-10">
+                <ul class="list-inline profile liltop">
+                  <li><%= current_user.first_name.capitalize %></li>
+                  <li class="profile-inline"><%= current_user.last_name.capitalize %></li>
+                  <li class="little-dates"><%= current_user.user_score %></li>
                 </ul>
-                <p>SCORE <%= current_user.user_score %></p>
+                <%= link_to destroy_user_session_path, class: "profile",  method: :delete do %>
+                <%= t(".sign_out", default: "Log out") %>
+                <% end %>
               </div>
             </div>
 
-            <li>MY TRIPS</li>
-            <ul>
-              <% current_user.teams.each do |t| %>
-              <li><%= link_to t.city.name.upcase, team_path(t), method: :get if t.in_trip? %>
-                <%= t.start_date.strftime("%d")%> <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                <%= t.end_date.strftime("%d-%m") %>
-              </li>
-              <% end %>
-              <li>
-              </ul>
-              <li><%= link_to "Start a new trip", root_path %></li>
-              <li><hr></li>
-              <li><%= link_to "Edit my profile", edit_user_path(current_user)%></li>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                <%= t(".sign_out", default: "Log out") %>
-                <% end %>
-              </li>
-              <li><hr></li>
-              <li>About</li>
-              <li>Contact us</li>
-              <li><ul class="list-inline">
-                <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
-                <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
-                <li><i class="fa fa-youtube" aria-hidden="true"></i></li>
-                <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
 
-              </ul></li>
-
-
-            </ul>
-          </div>
+          </ul>
         </div>
+      </div>
 
-        <% else %>
+      <% else %>
 
-        <div class="navbar-item hidden-md hidden-lg">
-          <div class="dropdown">
-            <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-            <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-              <li>
-               <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-item navbar-link" %>
-             </li>
-           </ul>
-         </div>
+      <div class="navbar-item hidden-md hidden-lg">
+        <div class="dropdown">
+          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+          <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+            <li>
+             <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-item navbar-link" %>
+           </li>
+         </ul>
        </div>
-       <% end %>
      </div>
+     <% end %>
    </div>
  </div>
+</div>
