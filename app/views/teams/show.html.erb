@@ -1,7 +1,11 @@
-<div class="container content">
+<div class="container content toptoptop">
+  <div class="row">
+    <h1>YOUR CHALLENGES</h1>
+  </div>
+
   <div class="row">
     <div class="col-xs-6">
-      <h1>YOUR TRAVEL BUDDIES</h1>
+      <h2>YOUR TRAVEL BUDDIES</h2>
       <% @team.members.each do |member| %>
       <%#= render "card", member: member %>
       <% if member.user.facebook_picture_url.nil? %>
@@ -18,13 +22,12 @@
       <%#= link_to image_tag("addmember.png", height: "60px", width: "60px"), new_team_member_path(@team), {class: "btn-add-member"} %>
     </div>
     <div class="col-xs-6 right">
-     <h1>YOUR TEAM SCORE</h1>
+    <h2>TEAM SCORE</h2>
      <div class="score"><%= @total_score %></div>
    </div>
  </div>
  <div class="tab-content" id="challenges">
 
-   <div class="row text-center lilpad"><h1>YOUR CHALLENGES</h1></div>
    <div class="row text-center">
      <div class="col-xs-6">
        <a id="ongoing"><h1>ONGOING</h1></a>
@@ -42,24 +45,24 @@
  </div>
  <div class="tab-content hidden" id="mappy">
    <div class="row">
-   <div class="col-xs-12">
-<%= render "challenges/map" %>
-     </div>
-   </div>
- </div>
-
- <div class="tab-content hidden" id="memories">
- <div class="row text-center">
-      <h1>YOUR MEMORIES</h1>
-      <% @team_answers.each do |team_answer| %>
-      <% unless  team_answer.picture.file.nil? %>
-      <div class="img">
-          <%= cl_image_tag team_answer.picture, height: 300, width: 300, crop: :fill%>
-      </div>
-        <% end %>
-        <% end %>
-      </div>
+     <div class="col-xs-12">
+      <%= render "challenges/map" %>
     </div>
+  </div>
+</div>
+
+<div class="tab-content hidden" id="memories">
+ <div class="row text-center">
+  <h1>YOUR MEMORIES</h1>
+  <% @team_answers.each do |team_answer| %>
+  <% unless  team_answer.picture.file.nil? %>
+  <div class="img">
+    <%= cl_image_tag team_answer.picture, height: 300, width: 300, crop: :fill%>
+  </div>
+  <% end %>
+  <% end %>
+</div>
+</div>
 
 
 
