@@ -89,6 +89,7 @@
 
           <div class="row bigbigspace">
             <div class="col-xs-2">
+              <%= link_to user_path(current_user) do %>
               <% if current_user.facebook_picture_url.nil? %>
               <% unless current_user.profile_picture.nil?  %>
               <% if current_user.profile_picture.present? %>
@@ -99,37 +100,39 @@
               <% end %>
               <%else %>
               <%= image_tag current_user.facebook_picture_url, class: "avatar-nav", crop: :fill %>
-              <% end %></div>
-              <div class="col-xs-10">
-                <ul class="list-inline profile liltop">
-                  <li><%= current_user.first_name.capitalize %></li>
-                  <li class="profile-inline"><%= current_user.last_name.capitalize %></li>
-                  <li class="little-dates"><%= current_user.user_score %></li>
-                </ul>
-                <%= link_to destroy_user_session_path, class: "profile",  method: :delete do %>
-                <%= t(".sign_out", default: "Log out") %>
-                <% end %>
-              </div>
+              <% end %>
+              <% end %>
             </div>
+            <div class="col-xs-10">
+              <ul class="list-inline profile liltop">
+                <li><%= current_user.first_name.capitalize %></li>
+                <li class="profile-inline"><%= current_user.last_name.capitalize %></li>
+                <li class="little-dates"><%= current_user.user_score %></li>
+              </ul>
+              <%= link_to destroy_user_session_path, class: "profile opacity",  method: :delete do %>
+              <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </div>
+          </div>
 
 
-          </ul>
-        </div>
+        </ul>
       </div>
+    </div>
 
-      <% else %>
+    <% else %>
 
-      <div class="navbar-item hidden-md hidden-lg">
-        <div class="dropdown">
-          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-          <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-            <li>
-             <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-item navbar-link" %>
-           </li>
-         </ul>
-       </div>
+    <div class="navbar-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+          <li>
+           <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-item navbar-link" %>
+         </li>
+       </ul>
      </div>
-     <% end %>
    </div>
+   <% end %>
  </div>
+</div>
 </div>
