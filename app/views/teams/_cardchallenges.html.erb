@@ -3,7 +3,7 @@
     <%= cl_image_tag team_challenge.challenge.picture %>
   </div>
   <div class="col-xs-9">
-    <h2><%= team_challenge.challenge.title %></h2>
+    <div class="card-title"><%= team_challenge.challenge.title %></div>
     <%= link_to "", team_challenge_path(@team.id, team_challenge.challenge.id) %>
   </div>
 </div>
