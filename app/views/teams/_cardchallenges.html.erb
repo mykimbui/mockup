@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-3">
+    <%= cl_image_tag team_challenge.challenge.picture %>
+  </div>
+  <div class="col-xs-9">
+    <div class="card-title"><%= team_challenge.challenge.title %></div>
+    <%= link_to "", team_challenge_path(@team.id, team_challenge.challenge.id) %>
+  </div>
+</div>
+
+<% if !team_challenge.answer.nil? %>
+<% if team_challenge.answer.status == "completed" && team_challenge.challenge.gift == "" %>
+<% elsif team_challenge.answer.status == "completed" && team_challenge.challenge.gift != "" %>
+<% end %>
+<% end %>
+

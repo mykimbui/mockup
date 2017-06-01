@@ -1,0 +1,94 @@
+<div class="row">
+  <div class="col-xs-6">
+    <h1>Opening hours</h1>
+  </div>
+  <div class="col-xs-6">
+    <%= @challenge.openinghours %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h1>Location</h1>
+  </div>
+  <div class="col-xs-6">
+<!--     <div class="inside p-inline yo" style="display: flex;">
+ -->      <span id="total-distance"></span> away
+<!--     </div>
+ -->  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h1>Cost</h1>
+  </div>
+  <div class="col-xs-6">
+     <div class="p-inline">
+      <% if @challenge.cost == 0 %>
+      <p>FREE</p>
+      <% elsif @challenge.cost == 1 %>
+      <div class="p-inline">
+        <p class="text-yellow">€</p>
+        <p class="text-grey">€</p>
+        <p class="text-grey">€</p>
+      </div>
+      <% elsif @challenge.cost == 2 %>
+      <div class="p-inline">
+        <p class="text-yellow">€</p>
+        <p class="text-yellow">€</p>
+        <p class="text-grey">€</p>
+      </div>
+      <% else @challenge.cost == 3 %>
+      <div class="p-inline">
+        <p class="text-yellow">€</p>
+        <p class="text-yellow">€</p>
+        <p class="text-yellow">€</p>
+      </div>
+      <% end %>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+  <h1>Wifi available</h1>
+  </div>
+    <div class="col-xs-6">
+  <div class="inside text-center bigger">
+    <%= link_to "#js-wifi", "data-toggle" => "modal" do %>
+    <p class="typo_white">   <i class="fa fa-wifi fa-lg typo_white"" aria-hidden="true"></i></p>
+    <% end %>
+    <div id="js-wifi" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title"><strong>Some wifi around this challenge</strong> </h4>
+         </div>
+         <div class="modal-body">
+          <h3>EXKi De Brouckère - place de Brouckère </h3>
+          <p>Name: Exki De Brouckère - Password: 4262EXKI</p>
+
+          <h3>Fortis Brussels - rue de la Chancellerie, 11</h3>
+          <p>Name: Fortis298 - Password: 426FORTISH</p>
+
+          <h3>McDonald's - place de la Bourse, 3 </h3>
+          <p>Name: McDo_PlB - Password: jsjsh7282hh</p>
+
+          <h3>Java Coffee - rue Neuve, 123</h3>
+          <p>Name: Java_Coffee_Wifi - Password: 42IHJDHZ9</p>
+
+          <h3>AB Café/Resto - rue des Pierres, 23 </h3>
+          <p>Name: ABcafeBXL - Password: 4kej983982I</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+

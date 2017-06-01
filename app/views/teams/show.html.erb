@@ -1,72 +1,102 @@
-<div class="container">
+<div class="container content">
   <div class="row">
-    <div class="col-xs-12">
-      <div class="team-picture">
-        <% if @team.team_picture.present?  %>
-          <%= cl_image_tag @team.team_picture, crop: :fill, class: "team-picture-size" %>
-        <% else %>
-          <%= cl_image_tag("default_fkhyps.png", class: "team-picture-size") %>
+    <div class="col-xs-6">
+      <h1>YOUR TRAVEL BUDDIES</h1>
+      <% @team.members.each do |member| %>
+      <%#= render "card", member: member %>
+      <% if member.user.facebook_picture_url.nil? %>
+      <% if member.user.profile_picture.present?  %>
+      <%= cl_image_tag member.user.profile_picture, class: "avatar", crop: :fill %>
+      <% else %>
+      <%= cl_image_tag("default_fkhyps.png", class: "avatar") %>
+      <% end %>
+      <%else %>
+      <%= image_tag member.user.facebook_picture_url, class: "avatar", crop: :fill %>
+      <% end %>
+      <%= link_to "", user_path(member.user.id), class: "team-link" %>
+      <% end %>
+      <%#= link_to image_tag("addmember.png", height: "60px", width: "60px"), new_team_member_path(@team), {class: "btn-add-member"} %>
+    </div>
+    <div class="col-xs-6 right">
+     <h1>YOUR TEAM SCORE</h1>
+     <div class="score"><%= @total_score %></div>
+   </div>
+ </div>
+ <div class="tab-content" id="challenges">
+
+   <div class="row text-center lilpad"><h1>YOUR CHALLENGES</h1></div>
+   <div class="row text-center">
+     <div class="col-xs-6">
+       <a id="ongoing"><h1>ONGOING</h1></a>
+     </div>
+     <div class="col-xs-6">
+       <a id="completed"><h1>COMPLETED</h1></a>
+     </div>
+   </div>
+
+   <div class="row">
+     <div class="col-xs-12">
+       <%= render "listofchallenges" %>
+     </div>
+   </div>
+ </div>
+ <div class="tab-content hidden" id="mappy">
+   <div class="row">
+   <div class="col-xs-12">
+<%= render "challenges/map" %>
+     </div>
+   </div>
+ </div>
+
+ <div class="tab-content hidden" id="memories">
+ <div class="row text-center">
+      <h1>YOUR MEMORIES</h1>
+      <% @team_answers.each do |team_answer| %>
+      <% unless  team_answer.picture.file.nil? %>
+      <div class="img">
+          <%= cl_image_tag team_answer.picture, height: 300, width: 300, crop: :fill%>
+      </div>
+        <% end %>
         <% end %>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="white-block">
-      <div class="col-xs-12 text-center team-text-grey">
-        <div class="inline-team">
-          <h2>
-            <%= @team.title.capitalize %>
-          </h2>
-            <p><%= link_to "", edit_team_path(@team), class: "fa fa-pencil edit-button", style: "top: 28px;
-position: relative;
-right: -7px; color: grey; width: 10px", method: :get %></p>
-        </div>
-        <div class="teamscore cross-challenge-team">
-        <p><%= @total_score %> <sup>PT</sup></p>
-        </div>
-        <div class="inline-team">
 
-          <% if @team.start_date.to_date > Date.today %>
-            <p><%= countdown = (@team.start_date.to_date - Date.today).to_i %> days</p>
-          <% elsif @team.in_trip? %>
-            <p>You still have <%= -(Date.today - @team.end_date.to_date).to_i+1 %> days</p>
-          <% else %>
-            <p> The trip is finished. </p>
-          <% end %>
-          <p>  in <%= @team.city.name %> <%= link_to "", city_path(@team.city), class: "fa fa-info-circle edit-button", style: "color: grey;", method: :get %></p>
-          <p><%= link_to "", city_members_path(@team.city), class: "fa fa-thermometer-full  edit-button", style: "color: grey;", method: :get %>
-        </p>
-        </div>
 
-      </div>
-          </div>
 
-      <div class="row">
-        <div class="teammate members-team">
-          <h3>TEAMMATES</h3>
-          <% @team.members.each do |member| %>
-            <%= render "card", member: member %>
-          <% end %>
-          <div class="col-xs-3", style="margin-top: 10px;">
-            <%= link_to image_tag("addmember.png", height: "60px", width: "60px"), new_team_member_path(@team), {class: "btn-add-member"} %>
-          </div>
-        </div>
-      </div>
-  </div>
-  <div class="row">
-    <div class="button-team text-center">
-      <div class="col-xs-8 challenge-btn">
-        <div class="btn-team">
-          <% if @team.in_trip? %>
-            <p><b>Challenges</b><%= link_to "", team_challenges_path(@team), method: :get, class: "card-link-challenge" %></p>
-          <% end %>
-        </div>
-      </div>
-      <div class="col-xs-4 answer-btn text-center">
-        <div class="btn-team">
-          <p><b>Answers</b><%= link_to "", team_team_answers_path(@team), method: :get, class: "card-link-answer" %></p>
-        </div>
-      </div>
+<div class="row text-center bottommenu">
+  <div class="col-xs-4">
+    <a class="tab active" data-target="#challenges"><ul class="list-unstyled">
+      <li><i class="fa fa-gamepad icon-menu" aria-hidden="true"></i> </li>
+      <li> <% if @team.in_trip? %>
+        CHALLENGES<%#= link_to "", team_challenges_path(@team), method: :get, class: "btn-main" %>
+        <% end %></li>
+      </ul></a>
+    </div>
+    <div class="col-xs-4">
+      <a class="tab" data-target="#mappy"><ul class="list-unstyled">
+        <li><i class="fa fa-map" style="font-size: 15px; line-height: 20px;" aria-hidden="true"></i></li>
+        <li>MAP</li>
+      </ul></a>
+
+    </div>
+    <div class="col-xs-4">
+      <a class="tab" data-target="#memories"><ul class="list-unstyled">
+        <li><i class="fa fa-key icon-menu" aria-hidden="true"></i></li>
+        <li> MEMORIES<%#= link_to "", team_team_answers_path(@team), method: :get, class: "btn-main" %></li>
+      </ul></a>
+
     </div>
   </div>
+
+
+
+
+<%#= link_to "", edit_team_path(@team), class: "fa fa-pencil edit-button", style: "top: 28px;
+position: relative;
+right: -7px; color: grey; width: 10px", method: :get %>
+
+<%#= @team.city.name %> <%#= link_to "", city_path(@team.city), class: "fa fa-info-circle edit-button", style: "color: grey;", method: :get %>
+<%#= link_to "", city_members_path(@team.city), class: "fa fa-thermometer-full  edit-button", style: "color: grey;", method: :get %>
+
+
 </div>

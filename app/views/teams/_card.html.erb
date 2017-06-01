@@ -1,23 +1,23 @@
-<div class="col-xs-3 teammate-pic">
+<div class="col-xs-3">
   <div class="member">
-    <% if member.user.facebook_picture_url.nil? %>
-      <% if member.user.profile_picture.present?  %>
-        <%= cl_image_tag member.user.profile_picture, class: "members-picture", crop: :fill %>
-      <% else %>
-        <%= cl_image_tag("default_fkhyps.png", class: "members-picture") %>
-      <% end %>
+    <%# if member.user.facebook_picture_url.nil? %>
+      <%# if member.user.profile_picture.present?  %>
+        <%#= cl_image_tag member.user.profile_picture, class: "avatar", crop: :fill %>
+      <%# else %>
+        <%#= cl_image_tag("default_fkhyps.png", class: "avatar") %>
+      <%# end %>
     <%else %>
-      <%= image_tag member.user.facebook_picture_url, class: "members-picture", crop: :fill %>
-    <% end %>
-    <%= link_to "", user_path(member.user.id), class: "team-link" %>
+      <%#= image_tag member.user.facebook_picture_url, class: "avatar", crop: :fill %>
+    <%# end %>
+    <%#= link_to "", user_path(member.user.id), class: "team-link" %>
   </div>
 </div>
 
 
 
 
-<!-- <h2><%= member.user.first_name %> <%= member.user.last_name %></h2>
-<p><%= member.user.email %></p> -->
+<!-- <h2><%#= member.user.first_name %> <%#= member.user.last_name %></h2>
+<p><%#= member.user.email %></p> -->
 
 
 
