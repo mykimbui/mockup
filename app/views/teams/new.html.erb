@@ -1,16 +1,20 @@
 <div class="container">
   <div class="tab-content" id="where">
     <h1>WHERE DO YOU WANT TO GO?</h1>
-    <%= simple_form_for @team, defaults: { input_html: { class: 'input-container' } } do |f| %>
-    <%= f.input :city_id, collection: City.all, prompt: "PICK A CITY", label: false, input_html: { class: "disable-form-control" }  %>
+    <div class="padded">
+      <%= simple_form_for @team, defaults: { input_html: { class: 'input-container' } } do |f| %>
+      <%= f.input :city_id, collection: City.all, prompt: "PICK A CITY", label: false, input_html: { class: "disable-form-control" }  %>
+    </div>
     <a class="tab active btn-main" data-target="#when">Confirm</a>
   </div>
 
   <div class="tab-content hidden" id="when">
     <h1>WHEN ARE YOU GOING?</h1>
     <h2>Select your dates</h2>
+    <div class="padded">
     <%= f.input :start_date, :as => :date_picker, placeholder: "Start date", input_html: { class: "disable-form-control" } %>
     <%= f.input :end_date, :as => :date_picker, placeholder: "End date", input_html: { class: "disable-form-control" } %>
+    </div>
     <a class="tab btn-main" data-target="#who">CONFIRM</a>
   </div>
 
@@ -25,7 +29,7 @@
 
     <%= f.submit "Confirm", :class => "btn-main" %>
     <% end %>
-    </div>
+  </div>
 </div>
 
 <% content_for(:after_js) do %>
