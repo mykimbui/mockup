@@ -80,10 +80,22 @@
 
   <% if user_signed_in? %>
   <div class="navbar-item hidden-md hidden-lg">
-    <i class="fa fa-bars" aria-hidden="true" onclick="openlilNav()"></i>
-    <div id="mylilNav" class="verticaloverlay">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5d95fc
+" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" onclick="openlilNav()">
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+</svg>
+<!--     <i class="fa fa-bars" aria-hidden="true" onclick="openlilNav()"></i>
+ -->    <div id="mylilNav" class="verticaloverlay">
       <a href="javascript:void(0)" class="closebtn" onclick="closelilNav()"></a>
-      <i class="fa fa-times closingcross" aria-hidden="true"></i>
+      <div class="closingcross">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+      </div>
+
 
       <ul class="overlay-content">
 
