@@ -17,3 +17,23 @@
 .lilpad {
   padding: 15px 0;
 }
+
+.toppadding {
+  padding-top: 50px;
+}
+
+.row-no-padding {
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.right {
+  text-align: right;
+}
+
+.lililpad {
+  padding: 35px 0px 15px 0px;
+
+}

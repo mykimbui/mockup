@@ -5,13 +5,13 @@
 <div class="container content toptoptop">
   <div class="row">
     <div class="col-xs-12">
-      <h1>YOUR CHALLENGES</h1>
+      <h1>CHALLENGES</h1>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row toppadding">
     <div class="col-xs-6">
-      <h2>YOUR TRAVEL BUDDIES</h2>
+      <h2>TRAVEL BUDDIES</h2>
       <% @team.members.each do |member| %>
       <%#= render "card", member: member %>
       <% if member.user.facebook_picture_url.nil? %>
@@ -25,25 +25,25 @@
       <% end %>
       <%= link_to "", user_path(member.user.id), class: "team-link" %>
       <% end %>
-      <%#= link_to image_tag("addmember.png", height: "60px", width: "60px"), new_team_member_path(@team), {class: "btn-add-member"} %>
+      <%= link_to image_tag("addmember.png", width: "30px"), new_team_member_path(@team), {class: "btn-add-member"} %>
     </div>
     <div class="col-xs-6 right">
       <h2>TEAM SCORE</h2>
-      <div class="score"><%= @total_score %></div>
+      <div class="scoring"><%= @total_score %></div>
     </div>
   </div>
   <div class="tab-content" id="challenges">
 
-    <div class="row">
+    <div class="row lililpad">
      <div class="col-xs-6">
-       <a id="ongoing"><h1>ONGOING</h1></a>
+       <a id="ongoing"><h3>ONGOING</h3></a>
      </div>
      <div class="col-xs-6 right">
-       <a id="completed"><h1>COMPLETED</h1></a>
+       <a id="completed"><h3>COMPLETED</h3></a>
      </div>
    </div>
 
-   <div class="row">
+   <div class="row row-no-padding">
      <div class="col-xs-12">
        <%= render "listofchallenges" %>
      </div>
