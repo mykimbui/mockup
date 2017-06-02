@@ -1,8 +1,10 @@
-<div class="row card-challenge row-no-padding">
+<% if team_challenge.id.odd? %>
+
+<div class="row card-challenge even row-no-padding">
+
   <%#= cl_image_tag team_challenge.challenge.picture %>
   <div class="card-title"><%= team_challenge.challenge.title %></div>
-
-  <div class="col-xs-6 card-score"><%= team_challenge.challenge.score %></div>
+  <div class="col-xs-6 card-score"><%= team_challenge.challenge.score %>PTS</div>
   <div class="col-xs-6 right arrowpadding">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <line x1="4" y1="12" x2="20" y2="12"/>
@@ -13,6 +15,26 @@
 
   <%= link_to "", team_challenge_path(@team.id, team_challenge.challenge.id), class: "card-link" %>
 </div>
+
+<% else %>
+
+<div class="row card-challenge odd row-no-padding">
+
+  <%#= cl_image_tag team_challenge.challenge.picture %>
+  <div class="card-title"><%= team_challenge.challenge.title %></div>
+  <div class="col-xs-6 card-score"><%= team_challenge.challenge.score %>PTS</div>
+  <div class="col-xs-6 right arrowpadding">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="4" y1="12" x2="20" y2="12"/>
+      <polyline points="14 6 20 12 14 18"/>
+    </svg>
+  </div>
+
+
+  <%= link_to "", team_challenge_path(@team.id, team_challenge.challenge.id), class: "card-link" %>
+</div>
+
+<% end %>
 
 <% if !team_challenge.answer.nil? %>
 <% if team_challenge.answer.status == "completed" && team_challenge.challenge.gift == "" %>

@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <div class="row toppadding">
+  <div class="row toppadding littlepad">
     <div class="col-xs-6">
       <h2>TRAVEL BUDDIES</h2>
       <% @team.members.each do |member| %>
@@ -34,8 +34,8 @@
   </div>
   <div class="tab-content" id="challenges">
 
-    <div class="row lililpad">
-     <div class="col-xs-6">
+    <div class="row">
+     <div class="col-xs-6 lililpad">
        <a id="ongoing"><h3>ONGOING</h3></a>
      </div>
      <div class="col-xs-6 right">
@@ -72,27 +72,23 @@
 
 
 
-<div class="row text-center bottommenu">
+<div class="row bottommenu" id="bottom">
   <div class="col-xs-4">
-    <a class="tab active" data-target="#challenges"><ul class="list-unstyled">
-      <li><i class="fa fa-gamepad icon-menu" aria-hidden="true"></i> </li>
-      <li> <% if @team.in_trip? %>
+    <a class="tab active" data-target="#challenges">
+    <% if @team.in_trip? %>
         CHALLENGES<%#= link_to "", team_challenges_path(@team), method: :get, class: "btn-main" %>
-        <% end %></li>
-      </ul></a>
+        <% end %>
+      </a>
     </div>
-    <div class="col-xs-4">
-      <a class="tab" data-target="#mappy"><ul class="list-unstyled">
-        <li><i class="fa fa-map" style="font-size: 15px; line-height: 20px;" aria-hidden="true"></i></li>
-        <li>MAP</li>
-      </ul></a>
+    <div class="col-xs-4 text-center">
+      <a class="tab" data-target="#mappy">
+   MAP
+</a>
 
     </div>
-    <div class="col-xs-4">
-      <a class="tab" data-target="#memories"><ul class="list-unstyled">
-        <li><i class="fa fa-key icon-menu" aria-hidden="true"></i></li>
-        <li> MEMORIES<%#= link_to "", team_team_answers_path(@team), method: :get, class: "btn-main" %></li>
-      </ul></a>
+    <div class="col-xs-4 right">
+      <a class="tab" data-target="#memories">
+       MEMORIES<%#= link_to "", team_team_answers_path(@team), method: :get, class: "btn-main" %></a>
 
     </div>
   </div>

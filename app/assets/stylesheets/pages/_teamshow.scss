@@ -9,17 +9,32 @@
 }
 
 .card-challenge {
-  height: 110px;
+  height: 130px;
   position: relative;
-  background-color: #efefef;
   color:white;
   padding: 20px 0 0 30px;
 }
 
+.even {
+  background-color: #E8E9E4;
+}
+
+.odd {
+  background-color: #CFD9D8;
+}
+
 .card-title {
   font-size: 17px;
-  color: #837F7F;
+  color: black;
   letter-spacing: 0.59px;
+}
+
+.card-score {
+  font-size: 20px;
+  color: black;
+  opacity: 0.1;
+  font-weight: 600;
+  padding-top:55px;
 }
 
 .card-link {
@@ -34,5 +49,32 @@
 }
 
 .arrowpadding {
- margin: 32px 0px 0px -29px;
+ margin: 50px 0px 0px -29px;
+}
+
+.square {
+  background-image: linear-gradient(130deg, #5d95fc 0%, #f68084 100%);
+  height: 20px;
+  width: 20px;
+}
+
+// #bottom {
+//  position: fixed;
+//  bottom: 0px;
+//  width: 100%;
+//  background-image: linear-gradient(130deg, #5d95fc 0%, #f68084 100%);
+// }
+
+.bottommenu {
+  font-size: 12px;
+  color: #5274E8;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 15px;
+  a{
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
