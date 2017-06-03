@@ -1,21 +1,33 @@
-<% if current_user.facebook_picture_url.nil? %>
-<% unless current_user.profile_picture.nil?  %>
-<% if current_user.profile_picture.present? %>
-<%= cl_image_tag current_user.profile_picture, class: "avatar-user", crop: :fill %>
-<% else %>
-<%= cl_image_tag("default_fkhyps.png", class: "avatar-user") %>
-<% end %>
-<% end %>
-<%else %>
-<%= image_tag current_user.facebook_picture_url, class: "avatar-user", crop: :fill %>
-<% end %>
-<%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %>
-<%= current_user.user_score %>
-<%= link_to "", edit_user_path(current_user), method: :get %>
-<%= link_to "Start a new trip", new_team_path, style: "text-decoration: none; color: white;" %>
-<% current_user.members.each do |member| %>
-<%= render "card", member: member %>
-<% end %>
+
+<div class="content text-center">
+  <div class="row">
+    <% if current_user.facebook_picture_url.nil? %>
+    <% unless current_user.profile_picture.nil?  %>
+    <% if current_user.profile_picture.present? %>
+    <%= cl_image_tag current_user.profile_picture, class: "avatar-user", crop: :fill %>
+    <% else %>
+    <%= cl_image_tag("default_fkhyps.png", class: "avatar-user") %>
+    <% end %>
+    <% end %>
+    <%else %>
+    <%= image_tag current_user.facebook_picture_url, class: "avatar-user", crop: :fill %>
+    <% end %>
+  </div>
+  <div class="row lilpad">
+  <h1><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h1>
+ </div>
+ <div class="row">
+  SCORE <%= current_user.user_score %>
+</div>
+<ul class="row list-unstyled lilpad">
+  <li class="lilpad"><%= link_to "Start a new trip", new_team_path, class: 'btn-circled'  %></li>
+  <li class="lilpad"><%= link_to "Edit my profile", edit_user_path(current_user), method: :get, class: 'btn-circled' %></li>
+  <li class="lilpad"><%= link_to "Log out", destroy_user_session_path, class: "btn-circled",  method: :delete %></li>
+</ul>
+
+<%# current_user.members.each do |member| %>
+<%#= render "card", member: member %>
+<%# end %>
 
 
-
+</div>

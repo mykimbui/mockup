@@ -1,13 +1,15 @@
+<%= link_to team_path(@team), class: "upthere" do %>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <polyline points="15 18 9 12 15 6"/>
+</svg>
+<% end %>
 
-<div class="bigcontainer">
-
-  <%= link_to '', team_path(@team), class: "fa fa-times fa-lg cross-back-back", style: "color: #484846;"%>
-
-  <h2>Add team members</h2>
+<div class="content">
+  <h1>Add travel buddies</h1>
   <%= simple_form_for @member , url: team_members_path(@team), method: :post, remote: true, defaults: { input_html: { class: 'input-container animation-collor' } } do |f| %>
-  <%= f.input :email, placeholder: "Enter the email of your teammate", label: 'Email of your teammate', wrapper: :p_wrapper %>
+  <%= f.input :email, placeholder: "Enter the email of your travel buddy", label: 'Email of your travel buddy', wrapper: :p_wrapper %>
   <div class="topspace">
-    <%= f.button :submit, 'Add member', class: "btn-blue" %>
+    <%= f.button :submit, 'SUBMIT' %>
     <% end %>
   </div>
 
@@ -19,7 +21,5 @@
         </ul>
       </div>
     </div>
-  </div>
-  <div class="btn-bottom text-center">
-    <p><%= link_to 'Create your team', team_path(@team) %></p>
+    <%= link_to 'DONE', team_path(@team), class: "btn-main"  %>
   </div>
