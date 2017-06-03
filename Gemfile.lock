@@ -268,6 +268,8 @@ GEM
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
     slop (3.6.0)
+    social-share-button (0.10.0)
+      coffee-rails
     spring (2.0.0)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -333,6 +335,7 @@ DEPENDENCIES
   sass-rails
   select2-rails
   simple_form
+  social-share-button
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier
@@ -341,4 +344,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.13.6
+   1.15.0

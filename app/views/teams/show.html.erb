@@ -58,12 +58,14 @@
 </div>
 
 <div class="tab-content hidden" id="memories">
- <div class="row text-center">
-  <h1>YOUR MEMORIES</h1>
+ <div class="row">
   <% @team_answers.each do |team_answer| %>
   <% unless  team_answer.picture.file.nil? %>
   <div class="img">
-    <%= cl_image_tag team_answer.picture, height: 300, width: 300, crop: :fill%>
+    <%= cl_image_tag team_answer.picture, height: 300, width: 323, crop: :fill%>
+    <%= team_answer.created_at.strftime("%d %B %Y")   %>
+    <%= social_share_button_tag(team_answer.picture) %>
+
   </div>
   <% end %>
   <% end %>
