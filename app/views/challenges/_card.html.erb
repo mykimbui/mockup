@@ -1,6 +1,6 @@
 <% if team_challenge.id.odd? %>
 
-<div class="row card-challenge even row-no-padding">
+<div class="row card-challenge row-no-padding">
 
   <%#= cl_image_tag team_challenge.challenge.picture %>
   <div class="card-title"><%= team_challenge.challenge.title %></div>
@@ -14,11 +14,12 @@
 
 
   <%= link_to "", team_challenge_path(@team.id, team_challenge.challenge.id), class: "card-link" %>
+  <hr/>
 </div>
 
 <% else %>
 
-<div class="row card-challenge odd row-no-padding">
+<div class="row card-challenge row-no-padding">
 
   <%#= cl_image_tag team_challenge.challenge.picture %>
   <div class="card-title"><%= team_challenge.challenge.title %></div>
@@ -32,9 +33,12 @@
 
 
   <%= link_to "", team_challenge_path(@team.id, team_challenge.challenge.id), class: "card-link" %>
+  <hr/>
+
 </div>
 
 <% end %>
+
 
 <% if !team_challenge.answer.nil? %>
 <% if team_challenge.answer.status == "completed" && team_challenge.challenge.gift == "" %>
