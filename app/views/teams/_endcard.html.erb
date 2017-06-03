@@ -1,7 +1,19 @@
-<% if @team.start_date.to_date > Date.today %>
-<p><%= countdown = (@team.start_date.to_date - Date.today).to_i %> days</p>
-<% elsif @team.in_trip? %>
-<p>You still have <%= -(Date.today - @team.end_date.to_date).to_i+1 %> days</p>
-<% else %>
-<p> The trip is finished. </p>
+<div class="text-center">
+  <% if @team.start_date.to_date > Date.today %>
+  <div class="popup">
+   Your trip is in <%= countdown = (@team.start_date.to_date - Date.today).to_i %> days.
+   You can’t see your challenges yet.
+   Go look at the sheet, we prepared for you to start your trip smoothly !
+ </div>
+ <%elsif @team.in_trip? %>
+ <div class="nothing">
+ </div>
+ <% else %>
+ <div class="popup">
+  Your trip ended. Go see all the memories you made during your travels.
+  Don’t hesitate to share them !
+</div>
 <% end %>
+
+
+</div>

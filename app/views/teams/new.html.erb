@@ -5,7 +5,7 @@
       <%= simple_form_for @team, defaults: { input_html: { class: 'input-container' } } do |f| %>
       <%= f.input :city_id, collection: City.all, prompt: "PICK A CITY", label: false, input_html: { class: "disable-form-control" }  %>
     </div>
-    <a class="tab active btn-main" data-target="#when">Confirm</a>
+    <a class="tab active btn-main text-center" data-target="#when">CONFIRM</a>
   </div>
 
   <div class="tab-content hidden" id="when">

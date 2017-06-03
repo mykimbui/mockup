@@ -24,13 +24,16 @@ h3 {
   line-height: 0px;
   letter-spacing: 0px;
   opacity: 0.8;
-
 }
 
-
-
-.icon-menu {
-  font-size: 18px;
+h5 {
+  font-size: 8px;
+  font-weight:200;
 }
 
-
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}

@@ -8,6 +8,7 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require pickers
+//= require social-share-button
 //= require_tree .
 
 

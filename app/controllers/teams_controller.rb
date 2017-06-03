@@ -26,11 +26,13 @@ class TeamsController < ApplicationController
 
     #@user = current_user
 
-   # @hash = Gmaps4rails.build_markers(@list_challenges) do |challenge, marker|
-   #    marker.lat challenge.latitude
-   #    marker.lng challenge.longitude
-   #    #marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
-   #    end
+    # @challenges = Challenge.where.not(latitude: nil, longitude: nil)
+    # list_challenges = []
+    # @challenges.each do |list|
+    #   list_challenges << [list.latitude, list.longitude, params[:team_id], list.id]
+    # end
+
+    # @coordinates_challenges = list_challenges
 
     #order all the selected challenge by answer.status
     @team_challenges_not_completed = @team_challenges.joins(:answer).where(answers: {status:'not_completed'})
