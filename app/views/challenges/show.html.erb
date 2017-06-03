@@ -1,19 +1,29 @@
-<%= link_to '', team_challenges_path(@team, @challenge), class: "fa fa-arrow-circle-o-left"%>
+<%= link_to team_path(@team), class: "upthere" do %>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <polyline points="15 18 9 12 15 6"/>
+</svg>
+<% end %>
+
 <div class="content">
-  <div class="text-center">
-    <%= image_tag(@challenge.picture, :class => "picture-challenge") %>
-    <h1><%= @challenge.title.upcase %></h1>
-    <h1><%= @challenge.score %> POINTS</h1>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1><%= @challenge.title.upcase %></h1>
+    </div>
   </div>
-  <div class="row text-center">
+  <%= image_tag(@challenge.picture, :class => "picture-challenge") %>
+  <div class="right toppadding littlepad">
+    <h2>POINTS</h2>
+    <div class="scoring"><%= @challenge.score %></div>
+  </div>
+  <div class="row">
     <div class="col-xs-4">
-      <a class="tab active" data-target="#info"><h1>INFO</h1></a>
+      <a class="tab active" data-target="#info"><h3>INFO</h3></a>
     </div>
-    <div class="col-xs-4">
-      <a class="tab" data-target="#challenge"><h1>CHALLENGE</h1></a>
+    <div class="col-xs-4 text-center">
+      <a class="tab" data-target="#challenge"><h3>CHALLENGE</h3></a>
     </div>
-    <div class="col-xs-4">
-      <a class="tab" data-target="#mapppy"><h1>MAP</h1></a>
+    <div class="col-xs-4 right">
+      <a class="tab" data-target="#mapppy"><h3>MAP</h3></a>
     </div>
   </div>
 
@@ -73,12 +83,16 @@
 
   <div class="row">
     <ul class='list-inline'>
-      <li><i class="fa fa-compass" aria-hidden="true"></i></li>
-      <li><p><%=@challenge.address%></p></li>
-    </ul>
-  </div>
-  <%= render "mapshow" %>
+      <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </svg>
+    </li>
+    <li><p><%= @challenge.address.capitalize %></p></li>
+  </ul>
 
+<%= render "mapshow" %>
+</div>
 
 </div>
 
