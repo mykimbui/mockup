@@ -14,11 +14,6 @@
     <div class="tab-content" id="challenges">
      <% if @team.in_trip? %>
      <div class="row">
-      <div class="col-xs-12">
-        <h1>CHALLENGES</h1>
-      </div>
-    </div>
-    <div class="row toppadding littlepad">
       <div class="col-xs-6">
         <h2>TRAVEL BUDDIES</h2>
         <% @team.members.each do |member| %>
@@ -41,12 +36,16 @@
         <div class="scoring"><%= @total_score %></div>
       </div>
     </div>
-
     <div class="row">
-     <div class="col-xs-6 lililpad">
+      <div class="col-xs-12">
+        <h2>YOUR CHALLENGES</h2>
+      </div>
+    </div>
+    <div class="row">
+     <div class="col-xs-3 lililpad">
        <a id="ongoing"><h3>ONGOING</h3></a>
      </div>
-     <div class="col-xs-6 right">
+     <div class="col-xs-9">
        <a id="completed"><h3>COMPLETED</h3></a>
      </div>
    </div>
@@ -68,16 +67,19 @@
 </div>
 
 <div class="tab-content hidden" id="memories">
- <div class="row">
+ <div class="row row-no-padding bg-grey">
    <div class="col-xs-12">
-     <h1>MEMORIES</h1>
+     <h2>YOUR MEMORIES</h2>
    </div>
    <% @team_answers.each do |team_answer| %>
    <% unless  team_answer.picture.file.nil? %>
-   <div class="img">
-    <%= cl_image_tag team_answer.picture, height: 300, width: 323, crop: :fill%>
-    <%= team_answer.created_at.strftime("%d %B %Y")   %>
-    <%= social_share_button_tag(team_answer.picture) %>
+   <div class="img-memories">
+   <%= cl_image_tag team_answer.picture, crop: :fill, class: "img-mem" %>
+    <ul class="list-inline allaroundpad right">
+      <li><%= team_answer.created_at.strftime("%d %B %Y") %></li>
+      <li>Share on </li>
+      <li><%= social_share_button_tag(team_answer.picture) %></li>
+    </ul>
   </div>
   <% end %>
   <% end %>
@@ -112,14 +114,14 @@
 </div>
 <div class="col-xs-4 right">
   <a class="tab" data-target="#memories">
-      <ul class="list-unstyled text-center">
-   <li><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <ul class="list-unstyled text-center">
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
       <circle cx="12" cy="12" r="3"/>
-      </svg></li>
+    </svg></li>
     <li>MEMORIES</li></a>
-    </ul>
-  </div>
+  </ul>
+</div>
 </div>
 
 

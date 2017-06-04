@@ -29,6 +29,9 @@
   }
 }
 
+.allaroundpad {
+  padding: 10px;
+}
 .right {
   text-align: right;
 }
@@ -49,4 +52,8 @@ $size: 15px;
     height: $size;
     width: $size;
   }
+}
+
+.bg-grey {
+  background-color: #EEF3F6;
 }
