@@ -10,17 +10,17 @@
       <h1><%= @challenge.title.upcase %></h1>
     </div>
   </div>
-  <%= image_tag(@challenge.picture, :class => "picture-challenge") %>
+  <%= image_tag @challenge.picture %>
   <div class="right toppadding littlepad">
     <h2>POINTS</h2>
     <div class="scoring"><%= @challenge.score %></div>
   </div>
   <div class="row">
     <div class="col-xs-4">
-      <a class="tab active" data-target="#info"><h3>INFO</h3></a>
+      <a class="tab" data-target="#info"><h3>INFO</h3></a>
     </div>
     <div class="col-xs-4 text-center">
-      <a class="tab" data-target="#challenge"><h3>CHALLENGE</h3></a>
+      <a class="tab active" data-target="#challenge"><h3>CHALLENGE</h3></a>
     </div>
     <div class="col-xs-4 right">
       <a class="tab" data-target="#mapppy"><h3>MAP</h3></a>
@@ -28,73 +28,17 @@
   </div>
 
   <div class="tab-content" id="challenge">
-  <div class="lilpad">
-    <%= @challenge.description %></div>
-    <a id="hint"><p>Want a hint ?</p></a>
-    <div class="hint">
-     <p><%= @challenge.hint %></p>
-   </div>
-   <div class="row input-things">
-    <% if @answer.not_completed? %>
-    <div class= "alert alert-warning">Wrong answer</div>
-    <% end %>
-    <div class="needlilspace styled-input text-center">
-      <%= simple_form_for [@team, @challenge, @answer], defaults: { input_html: { class: 'input-container-white' } } do |f| %>
-      <%= f.error_notification %>
-      <% if @challenge.answer_text? %>
-      <div class="bottom-space">
-        <div class="pushtothetop">
-          <%= f.input :text, input_html: {value: @answer.text}, label: 'Type your answer', wrapper: :p_wrapper, wrapper_html: {class: "animation animation-color"} %>
-        </div>
-      </div>
-      <% elsif @challenge.answer_picture? %>
-      <%= f.input :picture, label: 'Take a picture', label_html: { class: "btn-picture"} %>
-      <%= f.input :picture_cache, as: :hidden %>
-      <% elsif @challenge.answer_auto? %>
-      <div class="bottoms-up">
-        <%= f.input :text, label: false,
-        collection: bad_answers(@challenge),
-        include_blank: "-- Pick an answer --",
-        selected: @answer.text,
-        input_html: { class: "styled-input-white" } %>
-      </div>
-      <% else @challenge.answer_both? %>
-      <div class="pushtothetop">
-        <%= f.input :text, label: 'Your answer', wrapper: :p_wrapper %>
-      </div>
-      <%= f.input :picture, label: 'Send picture' %>
-      <%= f.input :picture_cache, as: :hidden %>
-      <% end %>
-    </div>
+    <%= render "question" %>
+  </div>
+  <div class="tab-content hidden" id="mapppy">
+    <%= render "mapshow" %>
+  </div>
+  <div class="tab-content hidden" id="info">
+    <%= render "info" %>
   </div>
 
-  <div class="row text-center">
-    <%= f.button :submit,'Send answer', class: "btn-main" %>
-    <% end %>
-  </div>
-</div>
-
-<div class="tab-content hidden" id="info">
-  <%= render "info" %>
-</div>
 
 
-<div class="tab-content hidden" id="mapppy">
-
-  <div class="row">
-    <ul class='list-inline'>
-      <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-      </svg>
-    </li>
-    <li><p><%= @challenge.address.capitalize %></p></li>
-  </ul>
-
-  <%= render "mapshow" %>
-</div>
-
-</div>
 
 
 
