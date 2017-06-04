@@ -1,7 +1,9 @@
 
 <div class="content">
-<h6 class="text-center">Sign into your account to check your trips and play with your friends</h6>
-
+  <div class="text-center">
+    <%= render "shared/logo" %>
+    <h6>Sign into your account to check your trips and play with your friends</h6>
+  </div>
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), defaults: { input_html: { class: 'input-container' } })  do |f| %>
   <%= f.error_notification %>
   <div class="form-inputs login-input">
@@ -9,7 +11,7 @@
     <%= f.input :password, required: false, label: 'Password', wrapper: :p_wrapper %>
     <%#= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
-  <div class="form-actions">
+  <div class="form-actions toppadding">
     <%= f.button :submit, "Log in" %>
   </div>
   <% end %>
