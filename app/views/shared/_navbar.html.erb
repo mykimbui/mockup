@@ -51,7 +51,7 @@
           <li class="little-title">MY TRIPS</li>
           <ul class="cities yes">
             <% current_user.teams.each do |t| %>
-            <% if city.present? %>
+            <% if t.city.present? %>
             <% if t.in_trip? %>
             <li> <ul class="list-inline"><li><%= link_to t.city.name, team_path(t), method: :get %></li>
             <li class="little-dates"><%= t.start_date.strftime("%d")%> <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
@@ -132,7 +132,7 @@
         <ul class="cities yes">
           <% current_user.teams.each do |t| %>
           <% if t.in_trip? %>
-          <% if city.present? %>
+          <% if t.city.present? %>
           <li> <ul class="list-inline"><li><%= link_to t.city.name, team_path(t), method: :get %></li>
           <li class="little-dates"><%= t.start_date.strftime("%d")%> <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
             <%= t.end_date.strftime("%d-%m") %></li></ul>
