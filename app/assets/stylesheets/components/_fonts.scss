@@ -26,6 +26,16 @@ h3 {
   opacity: 0.8;
 }
 
+h4 {
+  font-family: $header-font;
+  color: black;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 0px;
+  letter-spacing: 0px;
+  opacity: 0.8;
+}
+
 h5 {
   font-size: 8px;
   font-weight:200;
@@ -35,5 +45,12 @@ a {
   text-decoration: none;
   &:hover {
     text-decoration: none;
+  }
+}
+
+#info {
+  hr {
+    border-top: 1px solid black;
+    opacity: 0.5;
   }
 }

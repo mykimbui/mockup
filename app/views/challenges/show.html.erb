@@ -1,5 +1,5 @@
 <%= link_to team_path(@team), class: "upthere" do %>
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <polyline points="15 18 9 12 15 6"/>
 </svg>
 <% end %>
@@ -28,8 +28,8 @@
   </div>
 
   <div class="tab-content" id="challenge">
-    <h1>Question</h1>
-    <p><%= @challenge.description %></p>
+  <div class="lilpad">
+    <%= @challenge.description %></div>
     <a id="hint"><p>Want a hint ?</p></a>
     <div class="hint">
      <p><%= @challenge.hint %></p>
@@ -91,7 +91,7 @@
     <li><p><%= @challenge.address.capitalize %></p></li>
   </ul>
 
-<%= render "mapshow" %>
+  <%= render "mapshow" %>
 </div>
 
 </div>
