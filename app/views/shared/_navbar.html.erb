@@ -3,6 +3,8 @@
   <!-- Right Navigation -->
   <div class="navbar-right hidden-xs hidden-sm">
     <!-- Different navigation if login or not -->
+    <% if current_user.present? %>
+
     <% if user_signed_in? %>
     <!-- Profile picture and dropdown -->
     <div class="navbar-item">
@@ -73,12 +75,12 @@
   <!-- Login text link -->
   <%= link_to t(".sign_in", default: "Login"), new_user_session_path %>
   <% end %>
-
+<% end %>
 
 
 
   <!-- Mobile friendly -->
-
+<% if current_user.present? %>
   <% if user_signed_in? %>
   <div class="navbar-item hidden-md hidden-lg">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333333
@@ -184,7 +186,7 @@
   <% end %>
 
 
-
+<% end %>
 
 
 </div>
