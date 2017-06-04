@@ -51,11 +51,13 @@
           <li class="little-title">MY TRIPS</li>
           <ul class="cities yes">
             <% current_user.teams.each do |t| %>
+            <% if city.present? %>
             <% if t.in_trip? %>
             <li> <ul class="list-inline"><li><%= link_to t.city.name, team_path(t), method: :get %></li>
             <li class="little-dates"><%= t.start_date.strftime("%d")%> <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
               <%= t.end_date.strftime("%d-%m") %></li></ul>
             </li>
+            <% end %>
             <% end %>
             <% end %>
           </ul>
@@ -71,7 +73,7 @@
   <% else %>
   <%= link_to t(".sign_in", default: "Login"), new_user_session_path %>
   <% end %>
-<% end %>
+  <% end %>
 
 
 
@@ -80,7 +82,7 @@
 
 
   <!-- Mobile friendly -->
-<% if current_user.present? %>
+  <% if current_user.present? %>
   <% if user_signed_in? %>
   <div class="navbar-item hidden-md hidden-lg">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333333
@@ -130,10 +132,12 @@
         <ul class="cities yes">
           <% current_user.teams.each do |t| %>
           <% if t.in_trip? %>
+          <% if city.present? %>
           <li> <ul class="list-inline"><li><%= link_to t.city.name, team_path(t), method: :get %></li>
           <li class="little-dates"><%= t.start_date.strftime("%d")%> <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
             <%= t.end_date.strftime("%d-%m") %></li></ul>
           </li>
+          <% end %>
           <% end %>
           <% end %>
         </ul>
@@ -182,7 +186,7 @@
   </div>
   <% end %>
 
-<% end %>
+  <% end %>
 
 </div>
 </div>
