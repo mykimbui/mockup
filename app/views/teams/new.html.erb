@@ -5,32 +5,36 @@
       <%= simple_form_for @team, defaults: { input_html: { class: 'input-container' } } do |f| %>
       <%= f.input :city_id, collection: City.all, prompt: "PICK A CITY", label: false, input_html: { class: "disable-form-control" }  %>
     </div>
-    <a class="tab active btn-red text-center" data-target="#when">CONFIRM</a>
-  </div>
+    <div id="bottom" class="bottommenup text-center">
+      <a class="tab active btn-red text-center" data-target="#when">CONFIRM</a>
+    </div></div>
 
-  <div class="tab-content hidden" id="when">
-    <h1>WHEN ARE YOU GOING?</h1>
-    <h2>Select your dates</h2>
-    <div class="padded">
-    <%= f.input :start_date, :as => :date_picker, placeholder: "Start date", input_html: { class: "disable-form-control" } %>
-    <%= f.input :end_date, :as => :date_picker, placeholder: "End date", input_html: { class: "disable-form-control" } %>
+    <div class="tab-content hidden" id="when">
+      <h1>WHEN ARE YOU GOING?</h1>
+      <h2>Select your dates</h2>
+      <div class="padded">
+        <%= f.input :start_date, :as => :date_picker, placeholder: "Start date", input_html: { class: "disable-form-control" } %>
+        <%= f.input :end_date, :as => :date_picker, placeholder: "End date", input_html: { class: "disable-form-control" } %>
+      </div>
+      <div id="bottom" class="bottommenup text-center">
+
+        <a class="tab btn-red" data-target="#who">CONFIRM</a>
+      </div></div>
+
+      <%#= f.input :title, placeholder: "Choose a file", label: 'Team name', wrapper: :p_wrapper%>
+      <%#= f.input :team_picture, label: 'Choose a team picture', label_html: { class: "btn-medium", style: "font-weight: normal !important"} %>
+      <%#= f.input :team_picture_cache, as: :hidden %>
+
+      <div class="tab-content hidden" id="who">
+        <h1>INVITE YOUR TRAVEL BUDDIES</h1>
+        <h2>Add their email adresses, </h2>
+        <h2>they will get an invitation!</h2>
+        <div id="bottom" class="bottommenupp text-center">
+          <%= f.submit "CONFIRM", :class => "btn-red" %>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <a class="tab btn-red" data-target="#who">CONFIRM</a>
-  </div>
 
-  <%#= f.input :title, placeholder: "Choose a file", label: 'Team name', wrapper: :p_wrapper%>
-  <%#= f.input :team_picture, label: 'Choose a team picture', label_html: { class: "btn-medium", style: "font-weight: normal !important"} %>
-  <%#= f.input :team_picture_cache, as: :hidden %>
-
-  <div class="tab-content hidden" id="who">
-    <h1>INVITE YOUR TRAVEL BUDDIES</h1>
-    <h2>Add their email adresses, </h2>
-    <h2>they will get an invitation!</h2>
-
-    <%= f.submit "Confirm", :class => "btn-red" %>
+    <% content_for(:after_js) do %>
     <% end %>
-  </div>
-</div>
-
-<% content_for(:after_js) do %>
-<% end %>

@@ -45,8 +45,8 @@
 
 .row-no-padding {
   [class*="col-"] {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -84,3 +84,8 @@ $size: 15px;
  display: flex;
  justify-content: flex-start;
 }
+
+.paddingtotheright {
+  padding-left: 30px;
+}
+
