@@ -5,7 +5,7 @@
       <%= simple_form_for @team, defaults: { input_html: { class: 'input-container' } } do |f| %>
       <%= f.input :city_id, collection: City.all, prompt: "PICK A CITY", label: false, input_html: { class: "disable-form-control" }  %>
     </div>
-    <a class="tab active btn-main text-center" data-target="#when">CONFIRM</a>
+    <a class="tab active btn-red text-center" data-target="#when">CONFIRM</a>
   </div>
 
   <div class="tab-content hidden" id="when">
@@ -15,7 +15,7 @@
     <%= f.input :start_date, :as => :date_picker, placeholder: "Start date", input_html: { class: "disable-form-control" } %>
     <%= f.input :end_date, :as => :date_picker, placeholder: "End date", input_html: { class: "disable-form-control" } %>
     </div>
-    <a class="tab btn-main" data-target="#who">CONFIRM</a>
+    <a class="tab btn-red" data-target="#who">CONFIRM</a>
   </div>
 
   <%#= f.input :title, placeholder: "Choose a file", label: 'Team name', wrapper: :p_wrapper%>
@@ -27,7 +27,7 @@
     <h2>Add their email adresses, </h2>
     <h2>they will get an invitation!</h2>
 
-    <%= f.submit "Confirm", :class => "btn-main" %>
+    <%= f.submit "Confirm", :class => "btn-red" %>
     <% end %>
   </div>
 </div>
