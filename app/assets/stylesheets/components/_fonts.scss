@@ -1,9 +1,9 @@
 h1 {
   font-family: $header-font;
-  color: #b3c4dc;
+  color: #343851;
   font-weight: 600;
   font-size: 25px;
-  line-height: 0px;
+  line-height: 25px;
   letter-spacing: 0px;
   opacity: 0.8;
 }
@@ -18,7 +18,7 @@ h2 {
 
 h3 {
   font-family: $header-font;
-  color: #333333;
+  color: #343851;
   font-weight: 600;
   font-size: 13px;
   line-height: 0px;
@@ -43,15 +43,23 @@ h5 {
 
 h6 {
   font-family: $header-font;
-  color: #333333;
+  color: #343851;
   font-weight: 600;
-  font-size: 15px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 28.8px;
   letter-spacing: 0px;
   opacity: 0.8;
 }
 
-
+p {
+  font-family: $header-font;
+  color: black;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  opacity: 0.8;
+}
 a {
   text-decoration: none;
   &:hover {

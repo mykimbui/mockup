@@ -1,39 +1,33 @@
+
+
 <% if member.team.present? %>
-<div class="row">
-  <% if member.team.end_date.to_date > Date.today %>
-  <div class="col-xs-10 left-card text-left">
-    <% else %>
-    <div class="col-xs-10 left-card-outdate text-left">
-      <% end %>
-      <div class="row">
-        <div class="col-xs-4">
-          <div class="avatar-link">
-            <% if member.team.team_picture.present? %>
-            <%#= cl_image_tag member.team.team_picture, class: "picture-card" %>
-            <% else %>
-            <%#= cl_image_tag("default_fkhyps.png", class: "picture-card") %>
-            <% end %>
-          </div>
-        </div>
-        <div class="col-xs-8">
-          <p><%= member.team.city.name.upcase %></p>
-          <h2><%= member.team.title %></h2>
-          <p><%= member.team.score %> <sup>PT</sup></p>
-        </div>
-      </div>
-      <% if policy(member.team).show? %>
-      <%= link_to "", team_path(member.team.id), class: "card-link" %>
-      <% end %>
-    </div>
-    <% if member.team.end_date.to_date > Date.today %>
-    <div class="col-xs-2 delete-card text-center">
-      <% else %>
-      <div class="col-xs-2 delete-card-outdate text-center">
-        <% end %>
-        <% if policy(member.team).destroy? %>
-        <i class="fa fa-trash" aria-hidden="true"></i>
-        <%= link_to "", team_path(member.team), method: :delete, class: "card-link" %>
-        <% end %>
-      </div>
-    </div>
+<div class="cardtrips">
+
+  <%# if member.team.end_date.to_date > Date.today %>
+  <%# else %>
+  <%# end %>
+
+  <%# if member.team.team_picture.present? %>
+  <%#= cl_image_tag member.team.team_picture, class: "picture-card" %>
+  <%# else %>
+  <%#= cl_image_tag("default_fkhyps.png", class: "picture-card") %>
+  <%# end %>
+  <% if policy(member.team).show? %>
+  <h6><%= member.team.city.name %></h6>
+  From <%= member.team.start_date.strftime("%d")%> to
+  <%= member.team.end_date.strftime("%d %B") %>
+  <%#= member.team.score %>
+
+  <%= link_to "", team_path(member.team.id), class: "card-link" %>
+  <% end %>
+
+  <%# if member.team.end_date.to_date > Date.today %>
+  <%# else %>
+  <%# end %>
+</div>
+<div class="deletecard text-center">
+ <% if policy(member.team).destroy? %>
+ <%= link_to "DELETE", team_path(member.team), method: :delete %>
+ <% end %>
+</div>
 <% end %>

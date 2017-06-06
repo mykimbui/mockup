@@ -3,15 +3,15 @@
   <polyline points="15 18 9 12 15 6"/>
 </svg>
 <% end %>
-
+<%= image_tag @challenge.picture %>
+<div class="banner" style="background-image: url( '<%= image_path "https://static.pexels.com/photos/197935/pexels-photo-197935.jpeg" %>' );">
 <div class="content">
   <div class="row">
     <div class="col-xs-12">
       <h1><%= @challenge.title.upcase %></h1>
     </div>
   </div>
-  <%= image_tag @challenge.picture %>
-  <div class="right toppadding littlepad">
+  <div class="right">
     <h2>POINTS</h2>
     <div class="scoring"><%= @challenge.score %></div>
   </div>

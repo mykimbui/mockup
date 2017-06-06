@@ -10,7 +10,7 @@
     <%= render "endcard" %>
   </div>
 
-  <div class="container content toptoptop">
+  <div class="container content toptoptop white-bg-c">
     <div class="tab-content" id="challenges">
      <% if @team.in_trip? %>
      <div class="row">
@@ -53,8 +53,9 @@
    <div class="row">
      <div class="col-xs-12">
        <%= render "listofchallenges" %>
+       <div class="middlemargin"></div>
      </div>
-   </div>
+     </div>
  </div>
  <% end %>
 
@@ -74,8 +75,8 @@
    <% @team_answers.each do |team_answer| %>
    <% unless  team_answer.picture.file.nil? %>
    <div class="img-memories">
-   <%= cl_image_tag team_answer.picture, crop: :fill, class: "img-mem" %>
-    <ul class="list-inline allaroundpad right">
+     <%= cl_image_tag team_answer.picture, crop: :fill, class: "img-mem" %>
+     <ul class="list-inline allaroundpad right">
       <li><%= team_answer.created_at.strftime("%d %B %Y") %></li>
       <li>Share on </li>
       <li><%= social_share_button_tag(team_answer.picture) %></li>

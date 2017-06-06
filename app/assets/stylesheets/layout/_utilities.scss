@@ -15,17 +15,42 @@
 }
 
 .lilpad {
-  padding: 15px 0;
+  padding: 15px 0 0;
+}
+
+.lilmargin {
+  margin-bottom: 5px;
+}
+
+.lillilmargin {
+  margin-bottom: 10px;
+}
+
+.middlemargin {
+  margin-bottom: 70px;
 }
 
 .toppadding {
   padding-top: 50px;
 }
 
+.topperpadding {
+  padding-top: 70px;
+}
+
+.liltoppad {
+  padding-top: 2px;
+  padding-right: 2px;
+}
+
+.lilbottompad {
+  padding-bottom: 3px;
+}
+
 .row-no-padding {
   [class*="col-"] {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -57,3 +82,14 @@ $size: 15px;
 .bg-grey {
   background-color: #EEF3F6;
 }
+
+
+.inline-start {
+ display: flex;
+ justify-content: flex-start;
+}
+
+.paddingtotheright {
+  padding-left: 30px;
+}
+
