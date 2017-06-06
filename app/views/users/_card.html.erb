@@ -13,10 +13,13 @@
   <%#= cl_image_tag("default_fkhyps.png", class: "picture-card") %>
   <%# end %>
   <% if policy(member.team).show? %>
+  <% if member.team.city.present? %>
+
   <h6><%= member.team.city.name %></h6>
   From <%= member.team.start_date.strftime("%d")%> to
   <%= member.team.end_date.strftime("%d %B") %>
   <%#= member.team.score %>
+  <% end %>
 
   <%= link_to "", team_path(member.team.id), class: "card-link" %>
   <% end %>
