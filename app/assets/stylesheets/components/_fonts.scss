@@ -2,10 +2,16 @@ h1 {
   font-family: $header-font;
   color: #343851;
   font-weight: 600;
-  font-size: 25px;
-  line-height: 25px;
+  font-size: 22px;
+  line-height: 27px;
   letter-spacing: 0px;
   opacity: 0.8;
+}
+
+.sub-head {
+  font-size: 16px;
+  line-height: 28.8px;
+  font-weight: 300;
 }
 
 h2 {
