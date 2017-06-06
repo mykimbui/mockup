@@ -27,8 +27,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12">
-          <h6>My Trips</h6>
+        <div class="col-xs-12 paddingallover">
+          <h2>MY TRIPS</h2>
         </div>
       </div>
     </div>
@@ -36,14 +36,19 @@
 </div>
 
 <div class="content">
-  <div class="row">
+  <div class="row row-no-padding">
 
     <% if current_user.members.count > 0 %>
     <% current_user.members.each do |member| %>
-    <%= render "card", member: member %>
+    <div class="col-xs-6">
+      <%= render "card", member: member %>
+    </div>
     <%end %>
     <% else %>
-    <h6 class="text-center"> You didn't create any trip yet !</h6>
+    <div class="text-center content toppadding">
+      <h6>No trips yet !</h6>
+      <p style="padding: 0 30px;"> Once you start a trip, all your adventures will live here.</p>
+    </div>
     <% end %>
 
   </div>
