@@ -1,7 +1,7 @@
 <div class="container">
   <div class="tab-content" id="where">
     <h1>WHERE DO YOU WANT TO GO?</h1>
-    <div class="padded">
+    <div class="padded styled-input">
       <%= simple_form_for @team, defaults: { input_html: { class: 'input-container' } } do |f| %>
       <%= f.input :city_id, collection: City.all, prompt: "PICK A CITY", label: false, input_html: { class: "disable-form-control" }  %>
     </div>

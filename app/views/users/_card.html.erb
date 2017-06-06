@@ -30,7 +30,7 @@
 </div>
 <div class="deletecard text-center">
  <% if policy(member.team).destroy? %>
- <%= link_to "DELETE", team_path(member.team), method: :delete %>
+ <%= link_to "DELETE", team_path(member.team), method: :delete, class: "card-link" %>
  <% end %>
 </div>
 <% end %>
