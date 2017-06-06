@@ -10,3 +10,22 @@
   line-height: 15px;
   border-top: 0.5px solid #CCC;
 }
+
+.headline {
+  padding: 18px 18px;
+}
+
+.whitening {
+ background-color: white;
+ padding-bottom: 10px;
+}
+
+.challengeshow {
+  .tab h3 {
+    padding-bottom: 10px;
+  }
+  .active h3 {
+    border-bottom: 2px solid #e72d43;
+    color: #e72d43;
+  }
+}
