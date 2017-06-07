@@ -56,6 +56,7 @@ class ChallengesController < ApplicationController
     authorize @challenge
     @challenge.update(challenge_params)
     redirect_to team_challenge_path(@team, @challenge)
+    # redirect_to team_path(@team)
   end
 
   private
