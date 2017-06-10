@@ -14,6 +14,8 @@ class AnswersController < ApplicationController
     authorize team
 
     redirect_to team_challenges_path(params[:team_id])
+        # redirect_to team_path(@team)
+
   end
 
   def update
@@ -27,6 +29,8 @@ class AnswersController < ApplicationController
     authorize answer
 
     redirect_to team_challenges_path(params[:team_id])
+            # redirect_to team_path(params[:team_id])
+
   end
 
   private
