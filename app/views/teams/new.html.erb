@@ -1,21 +1,32 @@
-<div class="container">
+<div class="content createanew">
   <div class="tab-content" id="where">
-    <h1>WHERE DO YOU WANT TO GO?</h1>
+    <p>QUESTION 1</p>
+    <h1>Where do you want to go ?</h1>
     <div class="padded styled-input">
       <%= simple_form_for @team, defaults: { input_html: { class: 'input-container' } } do |f| %>
-      <%= f.input :city_id, collection: City.all, prompt: "PICK A CITY", label: false, input_html: { class: "disable-form-control" }  %>
+      <%= f.input :city_id, collection: City.all, label: false, input_html: { class: "disable-form-control" }  %>
     </div>
+    <ul class="list-inline">
+      <li><div class="circleon circle"></div></li>
+      <li><div class="circle"></div></li>
+      <li><div class="circle"></div></li>
+    </ul>
     <div id="bottom" class="bottommenup text-center">
       <a class="tab active btn-red text-center" data-target="#when">CONFIRM</a>
     </div></div>
 
     <div class="tab-content hidden" id="when">
-      <h1>WHEN ARE YOU GOING?</h1>
-      <h2>Select your dates</h2>
-      <div class="padded">
-        <%= f.input :start_date, :as => :date_picker, placeholder: "Start date", input_html: { class: "disable-form-control" } %>
-        <%= f.input :end_date, :as => :date_picker, placeholder: "End date", input_html: { class: "disable-form-control" } %>
+      <p>QUESTION 2</p>
+      <h1>When are you going ?</h1>
+      <div class="padded styled-input">
+        <%= f.input :start_date, :as => :date_picker, placeholder: "Beginning of your trip", label: false, input_html: { class: "disable-form-control" } %>
+        <%= f.input :end_date, :as => :date_picker, placeholder: "End of your trip", label: false, input_html: { class: "disable-form-control" } %>
       </div>
+      <ul class="list-inline">
+        <li><div class="circle"></div></li>
+        <li><div class="circleon circle"></div></li>
+        <li><div class="circle"></div></li>
+      </ul>
       <div id="bottom" class="bottommenup text-center">
 
         <a class="tab btn-red" data-target="#who">CONFIRM</a>
@@ -26,9 +37,15 @@
       <%#= f.input :team_picture_cache, as: :hidden %>
 
       <div class="tab-content hidden" id="who">
-        <h1>INVITE YOUR TRAVEL BUDDIES</h1>
-        <h2>Add their email adresses, </h2>
-        <h2>they will get an invitation!</h2>
+            <p>QUESTION 3</p>
+
+        <h1>Invite your travel buddies</h1>
+        <h2>Add their email adresses, they will get an invitation!</h2>
+         <ul class="list-inline">
+        <li><div class="circle"></div></li>
+        <li><div class="circle"></div></li>
+        <li><div class="circleon circle"></div></li>
+      </ul>
         <div id="bottom" class="bottommenupp text-center">
           <%= f.submit "CONFIRM", :class => "btn-red" %>
           <% end %>

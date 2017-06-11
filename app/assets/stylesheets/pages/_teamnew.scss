@@ -1,0 +1,27 @@
+.createanew {
+  h1 {
+    font-family: 'Merriweather', serif;
+  }
+
+  p {
+    font-size: 10px;
+    line-height: 17px;
+  }
+
+  padding: 20px 40px;
+
+  li {
+    padding-left: 0px;
+  }
+}
+
+.circle {
+  height: 7px;
+  width: 7px;
+  border-radius: 50px;
+  border: 1px solid black;
+}
+
+.circleon {
+  background-color: black;
+}
