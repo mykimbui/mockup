@@ -1,23 +1,21 @@
 <div class="normalpadding">
-<div class="lilpad">
-  <p><%= @challenge.description %></p>
-</div>
-<a id="hint"><p>Want a hint ?</p></a>
-<div class="hint">
- <p><%= @challenge.hint %></p>
-</div>
-<div class="row input-things">
+  <div class="lilpad">
+    <p><%= @challenge.description %></p>
+  </div>
+  <a id="hint"><p class="hinted">Want a hint ?</p></a>
+  <div class="hint">
+   <p><%= @challenge.hint %></p>
+ </div>
+ <div class="row input-things">
   <% if @answer.not_completed? %>
   <div class= "alert alert-warning">Wrong answer</div>
   <% end %>
   <div class="needlilspace styled-input text-center">
-    <%= simple_form_for [@team, @challenge, @answer], defaults: { input_html: { class: 'input-container-white' } } do |f| %>
+    <%= simple_form_for [@team, @challenge, @answer], defaults: { input_html: { class: 'input-container' } } do |f| %>
     <%= f.error_notification %>
     <% if @challenge.answer_text? %>
-    <div class="bottom-space">
-      <div class="pushtothetop">
-        <%= f.input :text, input_html: {value: @answer.text}, label: 'Type your answer', wrapper: :p_wrapper, wrapper_html: {class: "animation animation-color"} %>
-      </div>
+    <div class="pushtotop">
+      <%= f.input :text, input_html: {value: @answer.text}, label: 'Type your answer', wrapper: :p_wrapper, wrapper_html: {class: "animation animation-color"} %>
     </div>
     <% elsif @challenge.answer_picture? %>
     <%= f.input :picture, label: 'Take a picture', label_html: { class: "btn-picture"} %>
@@ -39,6 +37,8 @@
     <% end %>
   </div>
 </div>
+<div class="middlemargin"></div>
+
 </div>
 <div class="row text-center bottommenupquestion" id="bottom">
   <%= f.button :submit,'SUBMIT ANSWER', class: "btn-main" %>
