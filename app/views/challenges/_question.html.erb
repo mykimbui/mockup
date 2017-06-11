@@ -10,7 +10,7 @@
   <% if @answer.not_completed? %>
   <div class= "alert alert-warning">Wrong answer</div>
   <% end %>
-  <div class="needlilspace styled-input text-center">
+  <div class="needlilspace styled-input-white text-center">
     <%= simple_form_for [@team, @challenge, @answer], defaults: { input_html: { class: 'input-container' } } do |f| %>
     <%= f.error_notification %>
     <% if @challenge.answer_text? %>
@@ -26,7 +26,7 @@
       collection: bad_answers(@challenge),
       include_blank: "-- Pick an answer --",
       selected: @answer.text,
-      input_html: { class: "styled-input-white" } %>
+      input_html: { class: "styled-input-white disable-form-control" } %>
     </div>
     <% else @challenge.answer_both? %>
     <div class="pushtothetop">
@@ -37,7 +37,7 @@
     <% end %>
   </div>
 </div>
-<div class="middlemargin"></div>
+<div class="bigmargin"></div>
 
 </div>
 <div class="row text-center bottommenupquestion" id="bottom">

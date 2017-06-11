@@ -12,43 +12,41 @@
   /* Select style here */
 
   .disable-form-control {
-  border: none;
-  box-shadow: none;
-  transition: all .2s;
-  border-radius: 0px;
+    border: none;
+    box-shadow: none;
+    transition: all .2s;
+    border-radius: 0px;
+    background-color: #f1f3f3;
+    border-bottom: 1px solid #5e676e;
   }
 
   select {
     margin: 0 auto;
-    color: #3C3D72;
+    color: $middleblue;
     width: 310px;
-    padding: 15px;
+    padding: 22px;
     height: 50px;
     cursor: pointer;
-    background-color: url(http://sharpik.com/wip/cuteselect/arrow.png) 295px 12px no-repeat transparent  !important;
+    font-size: 15px;
   }
 
   select:hover {
     background-color: transparent;
-    color: #3C3D72;
-    padding: 15px 5px 15px 25px;
+    color: $middleblue;
+    padding: 22px 0px 15px 0px;
   }
 
   select option {
     background-color: white;
-    color: #3C3D72;
+    color: $middleblue;
     width: 310px;
     padding: 10px 15px;
-    height: 45px;
+    height: 40px;
     cursor: pointer;
   }
 
   select option:hover {
-    padding-left: 25px;
-    width: 270px;
-    color: #3C3D72;
+    color: $middleblue;
   }
 
-  color: white !important;
-  background-color: #555B8E !important;
 }
