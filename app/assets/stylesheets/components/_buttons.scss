@@ -1,11 +1,11 @@
 .btn-main {
   color: white;
-  padding: 10px 100px;
-  border-radius: 30px;
-  background-image: linear-gradient(130deg, #5d95fc 0%, #f68084 100%);
+  padding: 10px 35px;
+  border-radius: 50px;
   font-weight: bold;
   letter-spacing: 1px;
-  border-color: #5274E8;
+  background-color: $middleblue;
+  border: 1px solid $middleblue;
   a {
     text-decoration: none;
     &:hover {

@@ -1,11 +1,14 @@
 .createanew {
   h1 {
-    font-family: 'Merriweather', serif;
+    font-family: 'Cabin', sans-serif;
+    color: #143673;
+    letter-spacing: 1px;
   }
 
   p {
     font-size: 10px;
     line-height: 17px;
+    color: $lightblue;
   }
 
   padding: 20px 40px;
@@ -13,15 +16,25 @@
   li {
     padding-left: 0px;
   }
+
+  .list-inline {
+    padding-top: 15px;
+  }
 }
 
 .circle {
   height: 7px;
   width: 7px;
   border-radius: 50px;
-  border: 1px solid black;
+  background-color: $gray;
 }
 
 .circleon {
-  background-color: black;
+  background-color: $lightblue;
+}
+
+.flexing {
+  padding: 25px 40px;
+  display: flex;
+  justify-content: space-between;
 }
