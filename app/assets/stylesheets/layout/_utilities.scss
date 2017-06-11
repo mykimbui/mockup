@@ -27,8 +27,13 @@
 }
 
 .middlemargin {
-  margin-bottom: 70px;
+  margin-bottom: 100px;
 }
+
+.bigmargin {
+  margin-bottom: 250px;
+}
+
 
 .toppadding {
   padding-top: 35px;
@@ -106,5 +111,21 @@ $size: 15px;
 
 .pushtobottom {
   margin-top: 200px;
+}
+
+.pushabit {
+  margin-top: 30px;
+}
+
+.nopaddingleft {
+  padding-left: 0px;
+}
+
+.normalpadding {
+  padding: 10px 20px;
+}
+
+.pushtotop {
+  padding: 0px 14px;
 }
 

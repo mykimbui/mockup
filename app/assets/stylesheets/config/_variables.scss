@@ -3,9 +3,10 @@
  * ------------------------------------- */
 // Google fonts
 @import url('https://fonts.googleapis.com/css?family=Amiko');
+@import url('https://fonts.googleapis.com/css?family=Heebo');
+@import url('https://fonts.googleapis.com/css?family=Cabin');
 
-
-$base-font: 'Amiko', sans-serif;
+$base-font: 'Cabin', sans-serif;
 $header-font:'Amiko', sans-serif;
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -27,9 +28,16 @@ $base-height: 1;
 // Scheme
 $brand-color: #D23333;
 
+$pink: #FF477A;
+$lightgray: #F7F6F6;
+$lightblue: #3E7EFF;
+$blue: #063577;
+$gray: #e2e2e2;
+$darkblue: #303e47;
+$middleblue: #143673;
+
+
 $red: #EE5F5B;
-$blue: #516DAC;
 $yellow: #FDB631;
 $orange: #E67E22;
 $green: #32B796;
-$gray: #484846;

@@ -3,25 +3,20 @@
   <polyline points="15 18 9 12 15 6"/>
 </svg>
 <% end %>
+
 <%= image_tag @challenge.picture %>
-<div class="banner" style="background-image: url( '<%= image_path "https://static.pexels.com/photos/197935/pexels-photo-197935.jpeg" %>' );"></div>
+<div class="banner" style="background-image: url( '<%= image_path "social-tripin.png" %>' );"></div>
 <div class="content whitening">
   <div class="row">
-    <div class="col-xs-12 headline">
+    <div class="col-xs-12 headline text-center">
       <h1><%= @challenge.title %></h1>
       <div class="sub-head"><%= @challenge.score %> Points</div>
     </div>
   </div>
-  <div class="row challengeshow">
-    <div class="col-xs-4">
-      <a class="tab" data-target="#info"><h3>INFO</h3></a>
-    </div>
-    <div class="col-xs-4 text-center">
-      <a class="tab active" data-target="#challenge"><h3>CHALLENGE</h3></a>
-    </div>
-    <div class="col-xs-4 right">
-      <a class="tab" data-target="#mapppy"><h3>MAP</h3></a>
-    </div>
+  <div class="row challengeshow tabs flexing">
+        <a class="tab text-center" data-target="#info"><h3>INFO</h3></a>
+        <a class="tab text-center active" data-target="#challenge"><h3>CHALLENGE</h3></a>
+        <a class="tab text-center" data-target="#mapppy"><h3>MAP</h3></a>
   </div>
 </div>
 
