@@ -3,14 +3,27 @@
   padding: 10px 35px;
   border-radius: 50px;
   font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
   letter-spacing: 1px;
   background-color: $middleblue;
   border: 1px solid $middleblue;
   a {
     text-decoration: none;
-    &:hover {
-      text-decoration: none;
-    }
+    color: white;
+  }
+  a:hover, a:focus {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    color: white;
+    text-decoration: none;
   }
 }
 

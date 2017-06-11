@@ -13,6 +13,7 @@ class Team < ApplicationRecord
 
   validates :end_date, presence: true
   validates :start_date, presence: true
+  validates :city, presence: true
 
 
   def has_team_member?(user)
