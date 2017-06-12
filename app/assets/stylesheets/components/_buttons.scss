@@ -47,20 +47,20 @@ a {
   }
 }
 
-.btn-red {
- background-color: #e72d43;
+.btn-picture {
+ background-color: $lightblue;
  color: white;
  padding: 10px 30px;
- border-radius: 2px;
- border-color: #e72d43;
+ border-radius: 50px;
+ border-color: $lightblue;
  font-size: 13px;
  line-height: 16px;
  border-style: none;
  border-width: 0px;
  &:hover, &:link, &:visited, &:active {
-  background-color: #e72d43;
+  background-color: $lightblue;
   color: white;
-  border-color: #e72d43;
+  border-color: $lightblue;
   box-shadow: rgb(44,44,128) 0px 0.3px 0px 0px;
 }
 }
