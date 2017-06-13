@@ -22,13 +22,13 @@ class TeamsController < ApplicationController
     # @users = @team.users
     @team_challenges = @team.team_challenges
     @team_answers = @team.answers
-
-       @hash = Gmaps4rails.build_markers(@team_challenges) do |challenge, marker|
+    @team_challenges.each do |team_challenge|
+     @hash = Gmaps4rails.build_markers(team_challenge.challenge) do |challenge, marker|
       marker.lat challenge.latitude
       marker.lng challenge.longitude
       #marker.infowindow render_to_string(partial: "/flats/map_box", locals: { challenge: challenge })
-      end
-
+    end
+  end
 
     #@user = current_user
 
