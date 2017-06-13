@@ -1,7 +1,21 @@
 <% if user %>
- <li>
-   <%= user.email %>, <%= user.first_name %> <%= user.last_name %>, <%= image_tag user.profile_picture, class: "avatar" %>
- </li>
+
+<ul class="list-inline">
+ <li><% if user.facebook_picture_url.nil? %>
+  <% if user.profile_picture.present?  %>
+  <%= image_tag user.profile_picture, class: "avatar", crop: :fill %>
+  <% else %>
+  <%= cl_image_tag("default_fkhyps.png", class: "avatar") %>
+  <% end %>
+  <% else %>
+  <%= image_tag user.facebook_picture_url, class: "avatar", crop: :fill %>
+  <% end %></li>
+  <li> <p> <%= user.first_name.capitalize %> <%= user.last_name.capitalize %>, <%= user.email %> </p></li>
+</ul>
 <% elsif email %>
- <li><%= email %>, <i class="fa fa-envelope-o"></i></li>
+<ul class="list-inline">
+  <li><%= cl_image_tag("default_fkhyps.png", class: "avatar") %></li>
+  <li><p><%= email %>, <i class="fa fa-envelope-o"></i></p></li>
+</ul>
 <% end %>
+

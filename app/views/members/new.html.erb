@@ -3,13 +3,15 @@
   <polyline points="15 18 9 12 15 6"/>
 </svg>
 <% end %>
+<div class="col-xs-12 blue-bg centering">
+ <h1 class="title">Add travel buddies</h1>
+</div>
 
 <div class="content">
-  <h1>Add travel buddies</h1>
   <%= simple_form_for @member , url: team_members_path(@team), method: :post, remote: true, defaults: { input_html: { class: 'input-container animation-collor' } } do |f| %>
   <%= f.input :email, placeholder: "Enter the email of your travel buddy", label: 'Email of your travel buddy', wrapper: :p_wrapper %>
   <div class="topspace">
-    <%= f.button :submit, 'SUBMIT' %>
+    <%= f.button :submit, 'ADD', class: "btn-circled" %>
     <% end %>
   </div>
 
@@ -21,5 +23,6 @@
         </ul>
       </div>
     </div>
-    <%= link_to 'DONE', team_path(@team), class: "btn-main"  %>
+    <div class="right">
+    <%= link_to 'DONE', team_path(@team), class: "btn-main"  %></div>
   </div>
