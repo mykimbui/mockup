@@ -104,8 +104,8 @@
     }
   }
   .active {
-    color: $middleblue;
-    stroke: $middleblue;
+    color: $lightblue;
+    stroke: $lightblue;
   }
 }
 
@@ -142,15 +142,16 @@
 }
 
 .img-memories {
-  background-color: white;
-  margin: 10px 0;
+  margin: 20px 0;
   -webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.1);
   -moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.1);
   box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.1);
+  background-color: white;
+  height: 150px;
 }
 
 .img-mem {
-  width: 100%
+  width: 100%;
 }
 
 .white-bg-c {
@@ -162,4 +163,10 @@
   -webkit-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
   -moz-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
   box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
+}
+
+.blue-bg {
+  background-color: $lightblue;
+  height:100px;
+  color: white;
 }

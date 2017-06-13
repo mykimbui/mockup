@@ -34,6 +34,9 @@
   margin-bottom: 250px;
 }
 
+.pads {
+  padding: 30px 0px;
+}
 
 .toppadding {
   padding-top: 35px;
@@ -117,6 +120,10 @@ $size: 15px;
   margin-top: 30px;
 }
 
+.topper {
+  margin-top: 120px;
+}
+
 .nopaddingleft {
   padding-left: 0px;
 }
@@ -127,5 +134,23 @@ $size: 15px;
 
 .pushtotop {
   padding: 0px 14px;
+}
+
+.positiony {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.centering {
+  display: flex;
+  align-items: center;
+}
+
+.toright {
+  position: absolute;
+  right: 10px;
 }
 

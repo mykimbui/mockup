@@ -38,10 +38,11 @@ a {
 
 .btn-circled {
   border-radius: 30px;
-  border: 1px solid black;
+  border: 1px solid $middleblue;
   padding: 5px 10px;
-  color: black;
+  color: $middleblue;
   line-height: 10px;
+  background-color: transparent;
   a {
     text-decoration: none;
   }
