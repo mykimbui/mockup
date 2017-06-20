@@ -15,21 +15,22 @@
      <% if @team.in_trip? %>
      <div class="row blue-bg">
       <h1 class="title"> Challenges with </h1>
-      <% @team.members.each do |member| %>
-      <%#= render "card", member: member %>
-      <% if member.user.facebook_picture_url.nil? %>
-      <% if member.user.profile_picture.present?  %>
-      <%= cl_image_tag member.user.profile_picture, class: "avatar", crop: :fill %>
-      <% else %>
-      <%= cl_image_tag("default_fkhyps.png", class: "avatar") %>
-      <% end %>
-      <%else %>
-      <%= image_tag member.user.facebook_picture_url, class: "avatar", crop: :fill %>
-      <% end %>
-      <%= link_to "", user_path(member.user.id), class: "team-link" %>
-      <% end %>
-      <%= link_to image_tag("addmember.png", width: "30px"), new_team_member_path(@team), {class: "btn-add-member"} %>
-
+      <div class="marginlefting">
+        <% @team.members.each do |member| %>
+        <%#= render "card", member: member %>
+        <% if member.user.facebook_picture_url.nil? %>
+        <% if member.user.profile_picture.present?  %>
+        <%= cl_image_tag member.user.profile_picture, class: "avatar", crop: :fill %>
+        <% else %>
+        <%= cl_image_tag("default_fkhyps.png", class: "avatar") %>
+        <% end %>
+        <%else %>
+        <%= image_tag member.user.facebook_picture_url, class: "avatar", crop: :fill %>
+        <% end %>
+        <%= link_to "", user_path(member.user.id), class: "team-link" %>
+        <% end %>
+        <%= link_to image_tag("addmember.png", width: "30px"), new_team_member_path(@team), {class: "btn-add-member"} %>
+      </div>
       <h1 class="title"> and your total score is <%= @total_score %></h1>
     </div>
 
@@ -42,9 +43,11 @@
        </div>
      </div> -->
 
-     <div class="row">
+     <div class="row toptoppadding">
        <div class="col-xs-12">
          <%= render "listofchallenges" %>
+         <div class="middlemargin"></div>
+         <h1 class="text-center">No more challenge, have an idea ? Share it with us and we'll add it to the list!</h1>
          <div class="middlemargin"></div>
        </div>
      </div>
@@ -62,13 +65,15 @@
   <div class="tab-content hidden" id="memories">
    <div class="row row-no-padding">
      <div class="col-xs-12 blue-bg centering">
-       <h1 class="title">Memories</h1>
+       <div class="abitpads">
+         <h1 class="title">Memories</h1>
+       </div>
      </div>
      <div class="content">
        <% if @team_answers.empty? %>
        <h5 class="pushtobottom text-center">You don't have any memories yet ! <br> Go and play some challenges !</h5>
        <% else %>
-       <div class="topper">
+       <div class="toptoppadding">
          <% @team_answers.each do |team_answer| %>
          <% unless team_answer.picture.file.nil? %>
          <%= render "memory", team_answer: team_answer %>
