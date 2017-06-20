@@ -4,8 +4,12 @@
 </svg>
 <% end %>
 
-<%= image_tag @challenge.picture %>
+<% if @challenge.picture.present? %>
+<div class="banner" style="background-image: url( '<%= image_tag @challenge.picture %>" %>' );"></div>
+<% else %>
 <div class="banner" style="background-image: url( '<%= image_path "social-tripin.png" %>' );"></div>
+<% end %>
+
 <div class="content whitening">
   <div class="row">
     <div class="col-xs-12 headline text-center">
@@ -14,9 +18,9 @@
     </div>
   </div>
   <div class="row challengeshow tabs flexing">
-        <a class="tab text-center" data-target="#info"><h3>INFO</h3></a>
-        <a class="tab text-center active" data-target="#challenge"><h3>CHALLENGE</h3></a>
-        <a class="tab text-center" data-target="#mapppy"><h3>MAP</h3></a>
+    <a class="tab text-center" data-target="#info"><h3>INFO</h3></a>
+    <a class="tab text-center active" data-target="#challenge"><h3>CHALLENGE</h3></a>
+    <a class="tab text-center" data-target="#mapppy"><h3>MAP</h3></a>
   </div>
 </div>
 
