@@ -34,7 +34,7 @@
   <div class="row toppie middlemargin">
     <% if current_user.members.count > 0 %>
     <% current_user.members.each do |member| %>
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-sm-3">
       <%= render "card", member: member %>
     </div>
     <%end %>
