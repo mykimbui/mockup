@@ -17,26 +17,29 @@
       <div class="sub-head"><%= @challenge.score %> Points</div>
     </div>
   </div>
-  <div class="row challengeshow tabs flexing">
-    <a class="tab text-center" data-target="#info"><h3>INFO</h3></a>
-    <a class="tab text-center active" data-target="#challenge"><h3>CHALLENGE</h3></a>
-    <a class="tab text-center" data-target="#mapppy"><h3>MAP</h3></a>
-  </div>
-</div>
+  <div class="row challengeshow tabs">
+    <div class="col-xs-4">
+      <a class="tab text-center" data-target="#info"><h3>INFO</h3></a></div>
+      <div class="col-xs-4">
+        <a class="tab text-center active" data-target="#challenge"><h3>CHALLENGE</h3></a></div>
+        <div class="col-xs-4">
+          <a class="tab text-center" data-target="#mapppy"><h3>MAP</h3></a>
+        </div></div>
+      </div>
 
-<div class="content">
-  <div class="tab-content" id="challenge">
-    <%= render "question" %>
-  </div>
-</div>
-<div class="tab-content hidden" id="mapppy">
-  <%= render "mapshow" %>
-</div>
-<div class="content">
-  <div class="tab-content hidden" id="info">
-    <%= render "info" %>
-  </div>
-</div>
+      <div class="content">
+        <div class="tab-content" id="challenge">
+          <%= render "question" %>
+        </div>
+      </div>
+      <div class="tab-content hidden" id="mapppy">
+        <%= render "mapshow" %>
+      </div>
+      <div class="content">
+        <div class="tab-content hidden" id="info">
+          <%= render "info" %>
+        </div>
+      </div>
 
 
-<%= render "admin" %>
+      <%= render "admin" %>
