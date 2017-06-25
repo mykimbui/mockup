@@ -12,10 +12,3 @@ $('a[data-target="#mapppy"]').on('shown.bs.tab', function (e) {
       $('a[data-target="#mapppy"]').on('hidden.bs.tab', function (e) {
         google.maps.event.trigger(map, 'resize');
       });
-
-$('a[data-target="#map-tab"]').on('shown.bs.tab', function (e) {
-        google.maps.event.trigger(map, 'resize');
-      });
-      $('a[data-target="#map-tab"]').on('hidden.bs.tab', function (e) {
-        google.maps.event.trigger(map, 'resize');
-      });

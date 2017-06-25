@@ -1,19 +1,19 @@
   <div id="map" class="positiony" style="width: 100%; height: 800px;"></div>
 
- <% content_for(:after_js) do %>
- <%= javascript_tag do %>
- function initMap() {
+  <% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+  function initMap() {
 
- var map = new google.maps.Map(document.getElementById('map'), {
- center: {lat: 50.8503, lng: 4.3517},
- zoom: 12,
- styles: [
- {
- "featureType": "water",
- "elementType": "geometry",
- "stylers": [
- {
- "color": "#e9e9e9"
+  var map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: 50.8503, lng: 4.3517},
+  zoom: 12,
+  styles: [
+  {
+  "featureType": "water",
+  "elementType": "geometry",
+  "stylers": [
+  {
+  "color": "#e9e9e9"
 },
 {
   "lightness": 17
@@ -187,8 +187,8 @@
 
 var infoWindow = new google.maps.InfoWindow({map: map});
 
-var challenges =  <%= raw @coordinates_challenges %>
-console.log(challenges)
+console.log('<%=  @coordinates_challenges %>')
+var challenges =  <%=  @coordinates_challenges %>
 
 
 
@@ -234,4 +234,5 @@ infoWindow.setContent('You are here');
 <% end %>
 
 <% end %>
+
 
