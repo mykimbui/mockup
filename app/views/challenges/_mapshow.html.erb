@@ -224,3 +224,19 @@ infoWindow.setContent('You are here');
 
 <% end %>
 <% end %>
+
+
+<% content_for(:after_js) do %>
+<%= javascript_tag do %>
+$(document).ready(function(){
+$('tabs').tabs();
+});
+
+$('a[data-target="#mapppy"]').on('shown.bs.tab', function (e) {
+google.maps.event.trigger(map, 'resize');
+});
+$('a[data-target="#mapppy"]').on('hidden.bs.tab', function (e) {
+google.maps.event.trigger(map, 'resize');
+});
+<% end %>
+<% end %>
