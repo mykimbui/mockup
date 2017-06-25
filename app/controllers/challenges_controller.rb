@@ -10,7 +10,7 @@ class ChallengesController < ApplicationController
     @challenges = Challenge.where.not(latitude: nil, longitude: nil)
     list_challenges = []
     @challenges.each do |list|
-      list_challenges << [list.latitude, list.longitude, params[:team_id], list.id]
+      list_challenges << [list.latitude, list.longitude, @team.id, list.id]
     end
 
     @coordinates_challenges = list_challenges
