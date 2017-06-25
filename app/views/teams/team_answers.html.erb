@@ -12,7 +12,9 @@
      <div class="topper">
        <% @team_answers.each do |team_answer| %>
        <% unless team_answer.picture.file.nil? %>
-       <%= render "memory", team_answer: team_answer %>
+       <div class="col-xs-12 col-sm-3">
+         <%= render "memory", team_answer: team_answer %>
+       </div>
        <% end %>
        <% end %>
      </div>

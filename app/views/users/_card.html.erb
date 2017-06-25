@@ -16,7 +16,7 @@
 <div class="content">
   <div class="row card-challenge">
     <% if member.team.team_picture.present? %>
-    <div class="card-picture" style="background-image: url('<%= cl_image_path member.team.team_picture %>');"></div>
+    <div class="card-picture" style="background-image: url('<%= cl_image_path member.team.city.picture %>');"></div>
     <% else %>
     <div class="card-picture" style="background-image: url('<%= image_path "https://placeholdit.co//i/555x175?bg=cccccc"%>');"></div>
     <% end %>
