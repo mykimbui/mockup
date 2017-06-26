@@ -26,7 +26,7 @@ class TeamsController < ApplicationController
      @hash = Gmaps4rails.build_markers(team_challenge.challenge) do |challenge, marker|
       marker.lat challenge.latitude
       marker.lng challenge.longitude
-      #marker.infowindow render_to_string(partial: "/flats/map_box", locals: { challenge: challenge })
+      # marker.infowindow render_to_string(partial: "/challenges/question", locals: { challenge: challenge })
     end
   end
 
