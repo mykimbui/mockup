@@ -9,7 +9,7 @@
           <% if current_user.profile_picture.present? %>
           <%= cl_image_tag current_user.profile_picture, class: "avatar-profile", crop: :fill %>
           <% else %>
-          <%= cl_image_tag("default_fkhyps.png", class: "avatar-profile") %>
+          <%= image_tag("default.png", class: "avatar-profile") %>
           <% end %>
           <% end %>
           <%else %>
