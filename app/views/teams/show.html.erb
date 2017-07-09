@@ -22,7 +22,7 @@
         <% if member.user.profile_picture.present?  %>
         <%= cl_image_tag member.user.profile_picture, class: "avatar", crop: :fill %>
         <% else %>
-        <%= cl_image_tag("default_fkhyps.png", class: "avatar") %>
+        <%= image_tag("default.png", class: "avatar") %>
         <% end %>
         <%else %>
         <%= image_tag member.user.facebook_picture_url, class: "avatar", crop: :fill %>
@@ -46,71 +46,71 @@
      <div class="row toptoppadding">
        <%= render "listofchallenges" %>
        <div class="col-xs-12 text-center">
-       <h1>No more challenge, <br> have an idea ?</h1>
-       <h2 class="middlemargin">Share it with us and we'll add it to the list!</h2>
+         <h1>No more challenge, <br> have an idea ?</h1>
+         <h2 class="middlemargin">Share it with us and we'll add it to the list!</h2>
        </div>
-       </div>
-     </div>
-     <% end %>
-
-     <div class="tab-content hidden" id="mappy">
-       <div class="row row-no-padding">
-         <div class="col-xs-12">
-          <%= render "challenges/map" %>
-        </div>
-      </div>
-    </div>
-
-    <div class="tab-content hidden" id="memories">
-     <div class="row row-no-padding">
-       <div class="col-xs-12 blue-bg centering">
-         <div class="abitpads">
-           <h1 class="title">Memories</h1>
-         </div>
-       </div>
-       <div class="content">
-         <% if @team_answers.empty? %>
-         <h5 class="pushtobottom text-center">You don't have any memories yet ! <br> Go and play some challenges !</h5>
-         <% else %>
-         <div class="toppiepie">
-           <% @team_answers.each do |team_answer| %>
-           <% unless team_answer.picture.file.nil? %>
-           <div class="col-xs-12 col-sm-3">
-             <%= render "memory", team_answer: team_answer %>
-           </div>
-           <% end %>
-           <% end %>
-         </div>
-         <% end %>
-       </div>
-       <div class="middlemargin"></div>
      </div>
    </div>
+   <% end %>
 
-
-
-   <div class="row bottommenu" id="bottom">
-    <div class="col-xs-4">
-      <a class="tab active" data-target="#challenges">
-        <ul class="list-unstyled text-center">
-         <li> <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-        </svg></li>
-        <li>CHALLENGES</li><%#= link_to "", team_challenges_path(@team), method: :get, class: "btn-main" %>
-      </a>
-    </ul>
+   <div class="tab-content hidden" id="mappy">
+     <div class="row row-no-padding">
+       <div class="col-xs-12">
+        <%= render "challenges/map" %>
+      </div>
+    </div>
   </div>
-  <div class="col-xs-4 text-center">
-    <a class="tab" data-target="#mappy">
+
+  <div class="tab-content hidden" id="memories">
+   <div class="row row-no-padding">
+     <div class="col-xs-12 blue-bg centering">
+       <div class="abitpads">
+         <h1 class="title">Memories</h1>
+       </div>
+     </div>
+     <div class="content">
+       <% if @team_answers.empty? %>
+       <h5 class="pushtobottom text-center">You don't have any memories yet ! <br> Go and play some challenges !</h5>
+       <% else %>
+       <div class="toppiepie">
+         <% @team_answers.each do |team_answer| %>
+         <% unless team_answer.picture.file.nil? %>
+         <div class="col-xs-12 col-sm-3">
+           <%= render "memory", team_answer: team_answer %>
+         </div>
+         <% end %>
+         <% end %>
+       </div>
+       <% end %>
+     </div>
+     <div class="middlemargin"></div>
+   </div>
+ </div>
+
+
+
+ <div class="row bottommenu" id="bottom">
+  <div class="col-xs-4">
+    <a class="tab active" data-target="#challenges">
       <ul class="list-unstyled text-center">
-       <li><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
-        <line x1="8" y1="2" x2="8" y2="18"/>
-        <line x1="16" y1="6" x2="16" y2="22"/>
+       <li> <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
       </svg></li>
-      <li> MAP</li>
+      <li>CHALLENGES</li><%#= link_to "", team_challenges_path(@team), method: :get, class: "btn-main" %>
     </a>
   </ul>
+</div>
+<div class="col-xs-4 text-center">
+  <a class="tab" data-target="#mappy">
+    <ul class="list-unstyled text-center">
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
+      <line x1="8" y1="2" x2="8" y2="18"/>
+      <line x1="16" y1="6" x2="16" y2="22"/>
+    </svg></li>
+    <li> MAP</li>
+  </a>
+</ul>
 
 </div>
 <div class="col-xs-4 right">
