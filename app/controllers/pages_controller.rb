@@ -4,4 +4,9 @@ class PagesController < ApplicationController
   def home
     @navbardark = true
   end
+
+  def something
+    render :layout => 'new_layout'
+  end
+
 end

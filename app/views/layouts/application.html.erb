@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tripin - Dare to discover? </title>
+  <title>Tripin - dare to discover? </title>
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,10 +31,11 @@
   <meta itemprop="image" content="<%= image_url(meta_image) %>">
 
 
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= yield(:head) %>
   <%= favicon_link_tag 'tripin-favicon.png' %>
 </head>
-<body class="site">
+<body class="site <%= params[:controller]%>">
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
   <div class="site-content" style="margin-top: 50px;">
