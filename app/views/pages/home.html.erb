@@ -1,7 +1,15 @@
-<div class="content text-center padded">
-  <%= render "shared/logo" %>
-  <h6>Welcome to Tripin</h6>
-  <h6>Challenge the way you travel</h6>
+<% content_for :head do %>
+  <style>
+    body {
+      background-color: #FFFFFF;
+    }
+  </style>
+<% end %>
+
+<div class="content text-center padded innerpadding home">
+  <div class="smaller"><%= render "shared/logo" %></div>
+  <div class="homehead">Challenge the way </br> you travel</div>
+  <p>Tripin makes citytrips with your friends fun and exciting by giving you a list of challenges to complete.</p>
   <div class="text-center">
     <%= link_to "START A NEW TRIP",  new_team_path, class: "btn-main" %>
   </div>
@@ -11,7 +19,7 @@
 <!-- What is Tripin ?
 Tripin is a mobile app that propose list of challenges that will lead you to discover a city.
 The more challenges you complete, the more you discover !
-You will even win some discount !
+You will even win some discounts !
 
 What type of challenges ?
 Let’s keep a bit of suspense…
