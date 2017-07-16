@@ -1,44 +1,52 @@
 <% content_for :head do %>
-  <style>
-    body {
-      background-color: #FFFFFF;
-    }
-  </style>
+<style>
+  body {
+    background-color: #F7F6F6;
+  }
+</style>
 <% end %>
 
-<div class="content text-center padded innerpadding home">
-  <div class="smaller"><%= render "shared/logo" %></div>
-  <div class="homehead">Challenge the way </br> you travel</div>
 
-  <p class="paddedi">Tripin makes citytrips with your friends fun and exciting by giving you a list of challenges to complete.</p>
-  <div class="text-center">
-    <%= link_to "START A NEW TRIP",  new_team_path, class: "btn-main" %>
-  </div>
+<div class=" content text-center padded innerpadding home">
+<!--   <div class="smaller"><%#= render "shared/logo" %></div>
+-->  <div class="homehead">Challenge the way </br> you travel</div>
+
+<p class="paddedi">Tripin makes citytrips with your friends fun and exciting by giving you a list of challenges to complete.</p>
+
+<div class="text-center verylilpad">
+<%= link_to "START A NEW TRIP",  new_team_path, class: "btn-main" %>
+</div>
+<%= image_tag "tripin-illu-home.png", class: "img-home"%>
+
+
 </div>
 
+<div class="content">
 
-<!--
-What type of challenges ?
-Let’s keep a bit of suspense…
-We will just tell you that the challenges will lead you to talk to local people, make crazy picture, answer riddles… and of course, laugh a lot !
+  <div class="row">
+    What type of challenges ?
 
-How it works ?
-You just need to choose the city you are going to visit, pick your dates and travel buddies then you will get a list of challenges to accomplish.
+    Let’s keep a bit of suspense…
+    We will just tell you that the challenges will lead you to talk to local people, make crazy picture, answer riddles… and of course, laugh a lot !
+  </div>
+  How it works ?
+  You just need to choose the city you are going to visit, pick your dates and travel buddies then you will get a list of challenges to accomplish.
 
-Can everyone participate ?
-Yes of course !
-Tripin especially made for groups of friends and families.
+  Can everyone participate ?
+  Yes of course !
+  Tripin especially is made for groups of friends and families.
 
-Is it free ?
-Of course, it’s totally free !
+  Is it free ?
+  Of course, it’s totally free !
 
-What do I win ?
-When you succeed in accomplishing a challenge you can get free gifts or discounts at shops, museums, bars, restaurants and many other places !
+  What do I win ?
+  When you succeed in accomplishing a challenge you can get free gifts or discounts at shops, museums, bars, restaurants and many other places !
 
-Try it !
+  Try it !
 
 
-Who are we ?
-Two girls who love travelling and gaming. We are making this app to share our experiences and change the way we visit a country.
-Don’t hesitate to contact us, give us advices or if you just want to say hello
--->
+  Who are we ?
+  Two girls who love travelling and gaming. We are making this app to share our experiences and change the way we visit a country.
+  Don’t hesitate to contact us, give us advices or if you just want to say hello
+
+</div>

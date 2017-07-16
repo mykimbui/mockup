@@ -1,5 +1,5 @@
 body.pages_controller {
-  background-color : white;
+  background-color : #F7F6F6;
 }
 
 .innerpadding {
@@ -19,5 +19,17 @@ body.pages_controller {
 
 .paddedi {
   padding-top: 2em;
-  padding-bottom: 19em;
+}
+
+.img-home {
+  width: 350px;
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+}
+
+.verylilpad {
+  margin-top: 20px;
 }
