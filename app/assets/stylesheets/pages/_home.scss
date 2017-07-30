@@ -50,3 +50,10 @@ body.pages_controller {
   color: #696c7b;
   font-family: 'Roboto', sans-serif;
 }
+
+
+@media screen and (min-width: 480px) {
+ .side-pad {
+  padding: 0 250px 0 80px;
+}
+}
