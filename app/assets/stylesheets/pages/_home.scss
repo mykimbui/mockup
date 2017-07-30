@@ -34,9 +34,19 @@ body.pages_controller {
 }
 
 .home-title {
-  font-size: 36px;
+  font-size: 32px;
   line-height: 40px;
+  font-weight: 800;
   letter-spacing: 0.225px;
-  text-transform: uppercase;
+  color: #343851;
+  font-family: 'Roboto', sans-serif;
+}
+
+.text-home {
+  font-size: 16px;
+  line-height: 28.8px;
+  font-weight: 300;
+  letter-spacing: normal;
+  color: #696c7b;
   font-family: 'Roboto', sans-serif;
 }
