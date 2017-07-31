@@ -7,6 +7,14 @@ body.pages_controller {
   padding-right: 50px;
 }
 
+.home-banner {
+  width: 50%;
+  height: 100vh;
+  position: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
 .home {
   .list-inline > li {
     display: inline-block;
