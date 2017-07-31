@@ -77,6 +77,12 @@ body.pages_controller {
   width: 90px;
 }
 
+.bg-blue {
+  background-color: $lightblue;
+  padding-left: 0;
+  padding-right:0;
+}
+
 @media screen and (min-width: 480px) {
  .side-pad {
   padding: 0 300px 0 100px;
