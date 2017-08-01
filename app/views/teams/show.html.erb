@@ -47,7 +47,7 @@
        <%= render "listofchallenges" %>
        <div class="col-xs-12 text-center">
          <h1>No more challenge, <br> have an idea ?</h1>
-         <h2 class="middlemargin">Share it with us and we'll add it to the list!</h2>
+         <div class="text-home middlemargin">Share it with us and we'll add it to the list!</div>
        </div>
      </div>
    </div>
@@ -70,7 +70,10 @@
      </div>
      <div class="content">
        <% if @team_answers.empty? %>
-       <h5 class="pushtobottom text-center">You don't have any memories yet ! <br> Go and play some challenges !</h5>
+       <div class="text-center">
+<!--        <div class="smaller" style="fill: #343851;"><%#= render "shared/pinwheel" %></div>
+ -->       <div class="pushtobottom home-title">You don't have any memories yet ! <br> Go and play some challenges !</div>
+       </div>
        <% else %>
        <div class="toppiepie">
          <% @team_answers.each do |team_answer| %>
