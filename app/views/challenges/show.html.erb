@@ -27,6 +27,9 @@
         </div></div>
       </div>
 
+      <%= render "admin" %>
+
+
       <div class="content">
         <div class="tab-content" id="challenge">
           <%= render "question" %>
@@ -42,7 +45,6 @@
       </div>
 
 
-      <%= render "admin" %>
 
       <% content_for(:after_js) do %>
       <%= javascript_tag do %>
