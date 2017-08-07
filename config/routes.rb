@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update]
   resources :teams, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     get '/team_answers', to: 'teams#team_answers'
     resources :challenges, only: [:index, :show, :edit, :update] do

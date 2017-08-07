@@ -10,6 +10,7 @@ gem 'devise'
 gem 'redis'
 gem 'pundit'
 gem 'social-share-button'
+gem 'axlsx_rails'
 
 gem 'sass-rails'
 gem 'jquery-rails'
