@@ -18,7 +18,7 @@
     <% if member.team.team_picture.present? %>
     <div class="card-picture" style="background-image: url('<%= cl_image_path member.team.city.picture %>');"></div>
     <% else %>
-    <div class="card-picture" style="background-image: url('<%= image_path "https://placeholdit.co//i/555x175?bg=cccccc"%>');"></div>
+    <div class="card-picture" style="background-image: url('<%= image_path "tripin-brussels.png" %>');"></div>
     <% end %>
     <div class="card-title"><%= member.team.city.name %></div>
     <% if policy(member.team).destroy? %>
