@@ -1,7 +1,6 @@
 class Challenge < ApplicationRecord
     mount_uploader :picture, PhotoUploader
 
-
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 

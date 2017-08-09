@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-
+  before_filter :disable_nav
 
   protect_from_forgery with: :exception
   before_action :authenticate_user!
@@ -25,6 +25,9 @@ class ApplicationController < ActionController::Base
  # def after_sign_in_path_for(resource)
  #    request.env['omniauth.origin'] || stored_location_for(resource) || user_path(current_user )
  #  end
+def disable_nav
+  @disable_nav = true
+end
 
 def default_url_options
   { host: ENV['HOST'] || 'localhost:3000' }

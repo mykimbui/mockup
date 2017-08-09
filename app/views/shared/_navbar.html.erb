@@ -1,6 +1,8 @@
 <div class="navbar-tripin navbar-tripin-fixed">
   <%= link_to root_path, class: "navbar-tripin navbar-tripin-fixed-brand" do %>
-  <div class="smaller padss"><%= render "shared/tripinlogo" %></div>
+  <% if current_user.teams.present? %>
+  <div class="smaller padss"><%= render "shared/tripinlogo" unless current_page?(root_path) && current_page?(team_challenge_path(@team, @challenge))%></div>
+  <% end %>
   <% end %>
   <!-- Right Navigation -->
   <div class="navbar-right hidden-xs hidden-sm">
@@ -152,9 +154,8 @@
 
     <% else %>
     <div class="navbar-item hidden-md hidden-lg">
-    qrzgzqrgqrzrg
 
-    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "loginpls" %>
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "loginpls", style: "z-index:15;" %>
 
 <!--       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333333
       " stroke-width="2" stroke-linecap="round" stroke-linejoin="round" onclick="openlilNav()">
