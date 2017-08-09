@@ -1,7 +1,7 @@
 <div class="navbar-tripin navbar-tripin-fixed">
   <%= link_to root_path, class: "navbar-tripin navbar-tripin-fixed-brand" do %>
   <% if @team.present? && @challenge.present? %>
-  <div class="smaller padss"><%= render "shared/tripinlogo" unless current_page?(team_challenge_path(@team, @challenge)) && current_page?(root_path) %></div>
+  <div class="smaller padss"><%= render "shared/tripinlogo" unless current_page?(team_challenge_path(@team, @challenge)) || current_page?(root_path) %></div>
   <% end %>
   <% end %>
   <!-- Right Navigation -->
