@@ -9,6 +9,7 @@
 </div>
 <% content_for(:after_js) do %>
 <%= javascript_tag do %>
+
 function initMap() {
 
 var map = new google.maps.Map(document.getElementById('map'), {
@@ -192,12 +193,13 @@ styles: [
 ]
 });
 
+
 var infoWindow = new google.maps.InfoWindow({map: map});
 
 var challenge = new google.maps.Marker({
 position: new google.maps.LatLng(<%=@challenge.latitude %>, <%=@challenge.longitude%>),
 map: map,
-icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+icon: '//maps.google.com/mapfiles/ms/icons/blue-dot.png',
 });
 
 

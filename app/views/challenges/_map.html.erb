@@ -2,6 +2,7 @@
 
   <% content_for(:after_js) do %>
   <%= javascript_tag do %>
+
   function initMap() {
 
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -185,6 +186,7 @@
 ]
 });
 
+
 var infoWindow = new google.maps.InfoWindow({map: map});
 
 console.log('<%=  @coordinates_challenges %>')
@@ -202,7 +204,7 @@ console.log(url)
 var marker = new google.maps.Marker({
 position: {lat: challenge[0], lng: challenge[1]},
 map: map,
-icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+icon: '//maps.google.com/mapfiles/ms/icons/blue-dot.png',
 url: url
 });
 
@@ -227,6 +229,7 @@ console.log(getDistanceFromLatLonInKm(userPosition.lat, userPosition.lng))
 infoWindow.setPosition(userPosition);
 infoWindow.setContent('You are here');
 };
+
 
 
 
