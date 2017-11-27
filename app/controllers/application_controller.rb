@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  before_filter :disable_nav
+  before_filter :disable_nav, only: [:landing_page]
 
   protect_from_forgery with: :exception
   before_action :authenticate_user!

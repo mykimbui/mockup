@@ -5,6 +5,10 @@ class PagesController < ApplicationController
     @navbardark = true
   end
 
+  def landing_page
+    @disable_nav = true
+  end
+
   def something
     render :layout => 'new_layout'
   end
